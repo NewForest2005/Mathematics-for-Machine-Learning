@@ -631,5 +631,23 @@ El hecho de que $22 < 26$ indica que la cota de Sauer es conservadora, mientras 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/screenshot.png}
 \end{figure} \\
-\textbf{Solucion:}
+\textbf{Solucion:} La figura ilustra la construcción de una función continua y lineal por partes mediante la agregación de tres unidades ocultas con activación ReLU:
+\[
+y = \phi_0 + \sum_{i=1}^{3} \phi_i \cdot \max(0, \mathbf{w}_i^\top \mathbf{x} + b_i)
+\]
+Cada función $\max(0, z)$ genera una no-linealidad (nuestro ``doblez'' o pliegue) en el lugar geométrico donde el argumento es nulo. Formalmente, los pliegues corresponden a la unión de los hiperplanos:
+\[
+\mathcal{F} = \bigcup_{i=1}^{3} \{ \mathbf{x} \in \mathbb{R}^2 : \mathbf{w}_i^\top \mathbf{x} + b_i = 0 \}
+\]
+Dado que existen tres unidades con vectores de pesos $\mathbf{w}_i$ no paralelos, se identifican \textbf{3 líneas de pliegue} en el plano de entrada. \\ \\
+El número de regiones de linealidad constante $R$ producidas por la intersección de $D$ hiperplanos en $\mathbb{R}^2$ está acotado por:
+\[
+R \leq \sum_{k=0}^{2} \binom{D}{k}
+\]
+Sustituyendo para $D=3$:
+\begin{align*}
+    R &= \binom{3}{0} + \binom{3}{1} + \binom{3}{2} \\
+    &= 1 + 3 + 3 = 7
+\end{align*}
+Por lo tanto, la superficie de decisión final puede presentar hasta \textbf{7 regiones convexas} con distintas pendientes locales, correspondientes a \textbf{3 pliegues posibles}.
 \end{document}
