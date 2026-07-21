@@ -1,6 +1,6 @@
 # Matemáticas para Machine Learning
 
-Repositorio de materiales académicos y prácticos para el estudio de las matemáticas y los fundamentos del aprendizaje automático. Incluye las tareas del curso y una colección de cuadernos de Jupyter basados en *Understanding Deep Learning*, de Simon J. D. Prince.
+Repositorio de materiales académicos y prácticos para el estudio de las matemáticas y los fundamentos del aprendizaje automático. Incluye las tareas del curso y el desarrollo de algunos cuadernos de Jupyter, ejercicios en *Understanding Deep Learning*, de Simon J. D. Prince.
 
 ## Contenido del repositorio
 
