@@ -8,6 +8,7 @@
 \usepackage{float}
 \usepackage{algpseudocode}
 \usepackage{amsmath}
+\usepackage{booktabs}
 
 % Math, fonts, and symbols
 \usepackage{amsmath, amssymb, amsfonts, mathtools, mathrsfs,  wasysym, {upgreek}, breqn}
@@ -58,18 +59,18 @@
 \tableofcontents
 \newpage
 \section{Tarea 1: Fórmula de la Entropía}
-¿Por qué $H(\mathcal X) = - \Sigma_{x \in \mathcal X} p(x) log \ p(x)$? \\ \\
+¿Por qué $H(\mathcal X) = - \sum_{x \in \mathcal X} p(x)\log p(x)$? \\ \\
 \textbf{Solución:} \\ \\
 Consideremos $N$ como el número de símbolos que tiene un mensaje considerablemente largo (un \textit{outcome} de la vida real). Sean $S = \{x_1,...,x_n\}$ el alfabeto sobre el cual está cimentada la fuente que genera el mensaje, con distribución de probabilidad (\textit{d.p.}) $\{p_1,...,p_n\}$ y $N_i$ el número de veces que aparece el símbolo $x_i$. \\ \\
 Por la \textbf{Ley del Producto}, cuando $N\gg1$, la frecuencia de ejemplares se aproxima a su valor esperado teórico \[
 \lim_{N \to \infty} \frac{N_i}{N} = p_i,
-\] por lo cual $N \sim N_i \cdot p_i$. Como tenemos una \textit{d.p}, $\Sigma_{i=1}^n \  p_i = 1$. De este modo, \[ \Sigma_{i=1}^n \ N_i = N \Sigma_{i=1}^n \ p_i = N.\]
+\] por lo cual $N_i \sim Np_i$. Como tenemos una \textit{d.p.}, $\sum_{i=1}^n p_i = 1$. De este modo, \[ \sum_{i=1}^n N_i = N \sum_{i=1}^n p_i = N.\]
 Por otro lado, el coeficiente multinomial $W$ asociado a $S$ cuenta el número de maneras de ordenar $N$ símbolos, donde cada $x_i$ aparece $N_i$ veces; su valor para nuestro caso es
 \begin{align*}
     W &= \binom{N}{N_1} \binom{N-N_1}{N_2} \binom{N-N_1-N_2}{N_3} \cdots \binom{N- \Sigma_{i=1}^n N_i}{N_n} &\\ \\
     & = \frac{N!}{N_1! \ (N-N_1)!} \cdots \frac{(N-\Sigma_{i=1}^n N_i)}{N_n! \ (N-\Sigma_{i=1}^n N_i))!} &\\ \\
     &= \frac{N!}{N_1! \ N_2! \cdots N_n!} &\\ \\
-    &= \frac{N!}{\Pi_{i=1}^n \ N_i!}.
+    &= \frac{N!}{\prod_{i=1}^n N_i!}.
 \end{align*}
 Ahora, necesitamos el siguiente lema: \\ \\
 \textbf{\underline{Lema}:} Sea $a >1$. Entonces, existe una \textbf{única} función creciente $f:(0, \infty) \longrightarrow \mathbb{R}$ tal que \\ \\
@@ -174,7 +175,7 @@ Ahora, si $X$ es discreta, tenemos que
     & = \frac{\mathrm{Var}(X)}{a^2}.
 \end{align*}
 \subsection{Demostrar la desigualdad de Hoeffding}
-\noindent Sea $X$ una variable aleatoria que se puede expresar como la suma de $N$ variables aleatorias independientes, cada una acotada en el intervalo $[l_i,u_i]$: \[X = \Sigma_{i=1}^n X_i.\] Entonces, para cualquier $a>0$, \[P(|X-E[X]|>a) \leq e^{-\frac{2a^2}{\Sigma_{i=1}^N \ (u_i - l_i)}}.\]
+\noindent Sea $X$ una variable aleatoria que se puede expresar como la suma de $N$ variables aleatorias independientes, cada una acotada en el intervalo $[l_i,u_i]$: \[X = \sum_{i=1}^N X_i.\] Entonces, para cualquier $a>0$, \[P(|X-E[X]|>a) \leq 2e^{-\frac{2a^2}{\sum_{i=1}^N (u_i-l_i)^2}}.\]
 \textbf{Demostración:}
 Sea $X$ una variable aleatoria tal que $X = \sum_{i=1}^N X_i$, donde las $X_i$ son variables aleatorias independientes y cada una está acotada en el intervalo $[l_i, u_i]$. Necesitaremos algunos lemas:
 \begin{lemma}[Lema de Hoeffding para una variable]
@@ -217,7 +218,7 @@ P(|X - \mathbb{E}[X]| \geq a) \leq 2\exp\left( -\frac{2a^2}{\sum_{i=1}^N (u_i - 
 \]
 \end{proof}
 \section{Tarea 3: Support Vector Machine}
-Consultar en \hyperlink{https://colab.research.google.com/drive/1PkO9KV9lTNLd1QfVFIFTe7x3J4I-Q_pE?usp=sharing}{Cuaderno con SVM}.
+Consultar en \href{https://colab.research.google.com/drive/1PkO9KV9lTNLd1QfVFIFTe7x3J4I-Q_pE?usp=sharing}{el cuaderno con SVM}.
 \section{Tarea 4: Artículo}
 \noindent Responder detalladamente cómo se logró resolver el reto Netflix a partir de la solución del problema de factorización de matrices no negativas (Sugerencia: Hacer un paralelo de temas vs. temáticas y de temáticas vs. películas; deducir cómo es el comportamiento de la factorización a partir de este paralelo). \\ \\
 \textbf{Análisis:}
@@ -251,7 +252,7 @@ La asunción IID es el fundamento de la Minimización del Riesgo Empírico (ERM)
 \section{Tarea 7: Perceptrones}
 \noindent Exponer a detalle cuál es el algoritmo de aprendizaje del modelo de aprendizaje basado en perceptrones. \\ \\
 \textbf{Análisis:} El Perceptrón establece un modelo de clasificación binaria mediante un hiperplano separador en $\mathbb{R}^d$ definido por la ecuación afín \[f(x) = w^T x + b.\] La hipótesis de decisión se formaliza mediante la función de activación signo, \[\hat{y} = \text{sgn}(w^T x + b),\] la cual mapea el espacio de entrada a etiquetas discretas $y \in \{-1, +1\}$. Matemáticamente, el objetivo es minimizar el cardinal del conjunto de muestras mal clasificadas $\mathcal{M}$, pero dado que dicha función es discontinua, el algoritmo utiliza el criterio de error del Perceptrón: \[L(w, b) = -\sum_{i \in \mathcal{M}} y_i (w^T x_i + b).\] Esta función de costo es continua y convexa por trozos, y representa la suma de las distancias funcionales de las observaciones erróneas al hiperplano de decisión. \\ \\
-La minimización del riesgo empírico $L(w, b)$ no se realiza de forma analítica global, sino mediante Descenso de Gradiente Estocástico. Para cada instancia $(x_i, y_i)$ que satisface la condición de error \[y_i (w^T x_i + b) \leq 0\], el algoritmo calcula el gradiente local de la pérdida, resultando en \[\nabla_w L = -y_i x_i\] y \[\nabla_b L = -y_i.\] Aplicando una tasa de aprendizaje $\eta \in (0, 1]$, obtenemos las reglas de actualización vectorial: \[w^{(t+1)} = w^{(t)} + \eta y_i x_i\] y \[^{(t+1)} = b^{(t)} + \eta y_i.\] El álgebra lineal nos dice que cada actualización suma una fracción del vector de características al vector de pesos, rotando el hiperplano hacia una orientación que incrementa el margen funcional de la muestra errónea hasta corregir su clasificación. \\ \\
+La minimización del riesgo empírico $L(w, b)$ no se realiza de forma analítica global, sino mediante Descenso de Gradiente Estocástico. Para cada instancia $(x_i, y_i)$ que satisface la condición de error \[y_i (w^T x_i + b) \leq 0\], el algoritmo calcula el gradiente local de la pérdida, resultando en \[\nabla_w L = -y_i x_i\] y \[\nabla_b L = -y_i.\] Aplicando una tasa de aprendizaje $\eta \in (0, 1]$, obtenemos las reglas de actualización vectorial: \[w^{(t+1)} = w^{(t)} + \eta y_i x_i\] y \[b^{(t+1)} = b^{(t)} + \eta y_i.\] El álgebra lineal nos dice que cada actualización suma una fracción del vector de características al vector de pesos, rotando el hiperplano hacia una orientación que incrementa el margen funcional de la muestra errónea hasta corregir su clasificación. \\ \\
 La estabilidad computacional del algoritmo está supeditada a la estructura de los datos. Según el Teorema de Novikoff (o de Convergencia del Perceptrón), si el conjunto de datos es linealmente separable, existe un hiperplano óptimo con un margen geométrico $\gamma > 0$ tal que \[y_i (w^{*T} x_i) \geq \gamma.\] En este escenario, el número total de correcciones $k$ está acotado superiormente por $k \leq \frac{R^2}{\gamma^2}$, donde $R = \max \|x_i\|$ es el radio de la bola que contiene los datos. \\ \\Esta cota garantiza que el algoritmo alcanzará el error cero en tiempo constante. Por el contrario, en presencia de ruido o datos no separables ($\gamma \leq 0$), el algoritmo entra en un ciclo de oscilación infinita, lo que requiere la implementación de mecanismos de estabilidad como el algoritmo \textit{Pocket}. En este, al fijar un límite de iteraciones $T_{max}$, se garantiza que el resultado final \[w_{final} = \hat{w}_{pocket}^{(T_{max})}\] sea, por construcción, el mejor candidato dentro del subespacio de parámetros explorado. Aunque no garantiza alcanzar el óptimo global absoluto en tiempo polinomial, asegura que el error de entrenamiento $\epsilon$ será menor o igual al error de cualquier otro estado visitado, proporcionando una solución robusta frente al ruido y al solapamiento de clases. Para finalizar esta tarea, quise poner el pseudocódigo del algoritmo que acabamos de discutir y del perceptrón también, ayudándome de ChatGPT para su creación con base en la discusión realizada.
 
 \begin{algorithm}
@@ -390,7 +391,7 @@ Concluimos que la generalización es una transferencia de información desde el 
 Esto demuestra que sin una estructura de regularidad estadística asumida a priori, la optimización deviene en una mera interpolación de ruido. La frontera epistemológica del aprendizaje reside en esta dualidad: no existe (por el momento) la piedra filosofal del aprendizaje, pues la capacidad de extraer leyes generales de la realidad física depende estrictamente del ingenio para acotar el espacio de posibilidades mediante hipótesis coherentes y estructuralmente finitas. En última instancia, el aprendizaje no es la ausencia de límites, sino la aplicación estratégica de los mismos, razón por la cual la existencia de un límite determinístico de estas capacidades es sinceramente absurdo.
 \section{Tarea 9: Perceptrones en distribuciones Gaussianas}
 \noindent Construir un modelo de distribuciones Gaussianas en el plano e implementar en el modelo el algoritmo de perceptrones. \\ \\ 
-\textbf{Solución:} Redirigirse al siguiente \hyperlink{https://colab.research.google.com/drive/1VsHPskZ8GEHAOjnnoC54lV5ICCNrOiIC?usp=sharing}{cuaderno} para la solución.
+\textbf{Solución:} Redirigirse al siguiente \href{https://colab.research.google.com/drive/1VsHPskZ8GEHAOjnnoC54lV5ICCNrOiIC?usp=sharing}{cuaderno} para la solución.
 \section{Tarea 10: Perceptrones V.2}
 \noindent Respecto al Algoritmo de Aprendizaje de Perceptrones (previamente introducido en la Tarea 7), ¿el algoritmo encuentra los parámetros correctos (bajo qué precisión)? ¿El algoritmo para en un número finito de pasos? ¿Por qué funciona este algoritmo? Verificar que converge. \\ \\
 \textbf{Análisis:} El Algoritmo de Aprendizaje de Perceptrones (PLA) funciona porque, para cada actualización, el conjunto de hipótesis acepta separabilidad lineal. Este algoritmo garantiza un riesgo empírico nulo en datos linealmente separables:
@@ -416,7 +417,7 @@ La razón de por qué finalmente esos terminan siendo los puntos de juntura se f
 $$\frac{\partial f}{\partial \phi_i} = a[\theta_{i0} + \theta_{i1}x], \quad \frac{\partial f}{\partial \theta_{i0}} = \phi_i \mathbb{I}(\theta_{i0} + \theta_{i1}x > 0), \quad \frac{\partial f}{\partial \theta_{i1}} = \phi_i x \mathbb{I}(\theta_{i0} + \theta_{i1}x > 0)$$
 Esta estructura implica que $\mathbf{J}$ es una función constante por tramos con discontinuidades en $\mathcal{K}$. La evaluación de $f(x, \phi)$ en los vértices permite la identificación algebraica de los pesos, dado que la nulidad del término $a[0]$ desacopla las contribuciones marginales de las neuronas en sus respectivos umbrales. \\ \\
 Debido a la naturaleza no suave de ReLU, el paisaje de pérdida presenta aristas donde el gradiente no está definido. Usamos el algoritmo de retropropagación en ese caso, que utiliza el subgradiente, enfrentando discontinuidades de salto en cada $x_i \in \mathcal{K}$. Computacionalmente, esto significa que el vector de actualización de pesos muta de forma abrupta al cruzar una juntura, una propiedad que permite a la red modelar cambios de régimen nítidos pero que requiere esquemas de regularización para evitar oscilaciones en el proceso de minimización del riesgo empírico. \\ \\
-Al sustituir la activación por funciones suaves $\sigma \in C^\infty$ (por ejemplo, Sigmoide), la red se transforma en una variedad diferenciable. Los puntos $x_i$ dejan de ser quiebres geométricos y pasan a ser puntos de inflexión donde la curvatura $\kappa = \frac{|f''|}{(1+f'^2)^{3/2}}$ alcanza sus valores críticos. En este paradigma, el Jacobiano es continuo en todo el dominio, lo que permite el uso de métodos de Newton o cuasi-Newton, aunque se pierde la propiedad de soporte compacto de la activación, extendiendo la influencia de cada parámetro $\theta_{ij}$ a través de todo el espacio de entrada.
+Al sustituir la activación por funciones suaves $\sigma \in C^\infty$ (por ejemplo, Sigmoide), la red se transforma en una variedad diferenciable. Los puntos $x_i$ dejan de ser quiebres geométricos y pasan a ser puntos de inflexión donde la curvatura $\kappa = \frac{|f''|}{(1+(f')^2)^{3/2}}$ alcanza sus valores críticos. En este paradigma, el Jacobiano es continuo en todo el dominio, lo que permite el uso de métodos de Newton o cuasi-Newton, aunque se pierde la propiedad de soporte compacto de la activación, extendiendo la influencia de cada parámetro $\theta_{ij}$ a través de todo el espacio de entrada.
 \section{Tarea 12: Ejercicios presentación perceptrones}
 \noindent Realizar los ejercicios de la presentación de Modelos de Aprendizaje. \\ \\
 \textbf{Solución:} Hay dos ejercicios, \\ \\
@@ -587,7 +588,7 @@ y usando perceptrones con pesos específicos, quedaría \\ \\
 \end{tikzpicture}
 \end{center}
 \section{Tarea 14: Sobre la desigualdad de Hoeffding}
-\noindent A partir de la desigualdad de Hoeffding, determine, entre los parámetros $\epsilon$ y $\delta = 2Me^(-2N\epsilon^2)$, cuál controla de una mejor manera el $N$, con $N$ número de datos. \\ \\
+\noindent A partir de la desigualdad de Hoeffding, determine, entre los parámetros $\epsilon$ y $\delta = 2M e^{-2N\epsilon^2}$, cuál controla de una mejor manera el $N$, con $N$ número de datos. \\ \\
 \textbf{Solución:}
 La desigualdad de Hoeffding establece una cota superior para la probabilidad de desviación de la media empírica $\hat{\mu}_N$ respecto a la media poblacional $\mu$. Para variables i.i.d. en el intervalo $[0,1]$, se cumple:
 \[
@@ -595,7 +596,7 @@ La desigualdad de Hoeffding establece una cota superior para la probabilidad de 
 \]
 Definiendo $\delta$ como el límite superior de la probabilidad de error, podemos derivar la complejidad muestral $N$ necesaria para asegurar una tolerancia $\epsilon$:
 \[
-\delta = 2 e^{-2N \epsilon^2} \implies N \geq \frac{1}{2\epsilon^2} \ln \left( \frac{2}{\delta} \right)
+\delta = 2M e^{-2N \epsilon^2} \implies N \geq \frac{1}{2\epsilon^2} \ln \left( \frac{2M}{\delta} \right)
 \]
 De esta relación se desprenden dos comportamientos asintóticos fundamentales:
 \begin{itemize}
@@ -625,7 +626,7 @@ La función de crecimiento $\Pi_{\mathcal{H}}(N)$ para la clase de hiperplanos $
 \end{itemize}
 El hecho de que $22 < 26$ indica que la cota de Sauer es conservadora, mientras que el resultado de Cover proporciona el límite superior exacto para puntos en posición general. Las 10 dicotomías fallidas representan casos donde la geometría de los puntos impide la separación lineal, como sucede con los puntos interiores de una envolvente convexa o las diagonales de un polígono.
 \section{Tarea 16: Ejercicio presentación Desigualdades}
-\noindent Para este ejercicio, redireccionar a \hyperlink{https://colab.research.google.com/drive/1i3EZi1huZKmpNmWHTo7MsgXopWqNLMIN?usp=sharing}{este cuaderno}.
+\noindent Para este ejercicio, redireccionar a \href{https://colab.research.google.com/drive/1i3EZi1huZKmpNmWHTo7MsgXopWqNLMIN?usp=sharing}{este cuaderno}.
 \section{Tarea 17: Análisis de Imagen}
 \noindent ¿Cuántos dobleces tiene la siguiente figura? \\
 \begin{figure}
