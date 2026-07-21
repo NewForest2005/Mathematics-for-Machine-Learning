@@ -50,21 +50,21 @@
     citecolor=blue
 }
 
-\title{Tareas Matematicas para el Aprendizaje de Maquina}
+\title{Tareas Matemáticas para el Aprendizaje de Máquina}
 \author{Santiago Forero Rosales}
 
 \begin{document}
 \maketitle
 \tableofcontents
 \newpage
-\section{Tarea 1: Formula de la Entropia}
-Por que $H(\mathcal X) = - \Sigma_{x \in \mathcal X} p(x) log \ p(x)$? \\ \\
-\textbf{Solucion:} \\ \\
-Consideremos $N$ como el numero de simbolos que tiene un mensaje considerablemente largo (un \textit{outcome} de la vida real). Sean $S = \{x_1,...,x_n\}$ el alfabeto sobre el cual esta cimentada la fuente que genera el mensaje, con distribucion de probabilidad (\textit{d.p.}) $\{p_1,...,p_n\}$ y $N_i$ el numero de veces que aparece el simbolo $x_i$. \\ \\
-Por la \textbf{Ley del Producto}, cuando $N\gg1$, la frecuencia de ejemplares se aproxima a su valor esperado teorico \[
+\section{Tarea 1: Fórmula de la Entropía}
+¿Por qué $H(\mathcal X) = - \Sigma_{x \in \mathcal X} p(x) log \ p(x)$? \\ \\
+\textbf{Solución:} \\ \\
+Consideremos $N$ como el número de símbolos que tiene un mensaje considerablemente largo (un \textit{outcome} de la vida real). Sean $S = \{x_1,...,x_n\}$ el alfabeto sobre el cual está cimentada la fuente que genera el mensaje, con distribución de probabilidad (\textit{d.p.}) $\{p_1,...,p_n\}$ y $N_i$ el número de veces que aparece el símbolo $x_i$. \\ \\
+Por la \textbf{Ley del Producto}, cuando $N\gg1$, la frecuencia de ejemplares se aproxima a su valor esperado teórico \[
 \lim_{N \to \infty} \frac{N_i}{N} = p_i,
 \] por lo cual $N \sim N_i \cdot p_i$. Como tenemos una \textit{d.p}, $\Sigma_{i=1}^n \  p_i = 1$. De este modo, \[ \Sigma_{i=1}^n \ N_i = N \Sigma_{i=1}^n \ p_i = N.\]
-Por otro lado, el coeficiente multinomial $W$ asociado a $S$ cuenta el numero de maneras de ordenar $N$ simbolos, donde cada $x_i$ aparece $N_i$ veces; su valor para nuestro caso es
+Por otro lado, el coeficiente multinomial $W$ asociado a $S$ cuenta el número de maneras de ordenar $N$ símbolos, donde cada $x_i$ aparece $N_i$ veces; su valor para nuestro caso es
 \begin{align*}
     W &= \binom{N}{N_1} \binom{N-N_1}{N_2} \binom{N-N_1-N_2}{N_3} \cdots \binom{N- \Sigma_{i=1}^n N_i}{N_n} &\\ \\
     & = \frac{N!}{N_1! \ (N-N_1)!} \cdots \frac{(N-\Sigma_{i=1}^n N_i)}{N_n! \ (N-\Sigma_{i=1}^n N_i))!} &\\ \\
@@ -72,23 +72,23 @@ Por otro lado, el coeficiente multinomial $W$ asociado a $S$ cuenta el numero de
     &= \frac{N!}{\Pi_{i=1}^n \ N_i!}.
 \end{align*}
 Ahora, necesitamos el siguiente lema: \\ \\
-\textbf{\underline{Lema}:} Sea $a >1$. Entonces, existe una \textbf{unica} funcion creciente $f:(0, \infty) \longrightarrow \mathbb{R}$ tal que \\ \\
+\textbf{\underline{Lema}:} Sea $a >1$. Entonces, existe una \textbf{única} función creciente $f:(0, \infty) \longrightarrow \mathbb{R}$ tal que \\ \\
 \hspace*{1cm} $(i) \ \ \ f(a) = 1,$ \\ 
 \hspace*{1cm} $(ii) \ \ f(xy) = f(x) + f(y), \quad \forall x,y >0.$ \\ \\
-\textbf{Demostracion:} \\ \\
-Fijemos $x \in (0,1)$ arbitrario. Definimos $S_x = \left\{ \frac{k}{n} \in \mathbb{Q} \ | \ a^{\frac{k}{n}} \leq x \right\} \subseteq \mathbb{R}$.Este conjunto es no vacio, pues, por la \textbf{Desigualdad de Bernoulli}, para cualesquiera $h>0$ y $n \in \mathbb{N}$, se cumple \[(1+h)^n \geq 1 + nh.\] Sea $a=1+h$ para algun $h>0$ (este existe, una de las razones es que $a>1$), entonces  \[a^n \geq 1+nh > x\] (pues $x \in (0,1)$. De este modo, \[a^{-n} < x.\]
-Asi, $-n \in S_x$ para todo $n \in \mathbb{N}$. Ademas, esta acotado superiormente (con el orden usual), pues, si $k\geq n$, entonces $\frac{k}{n} \geq 1$ de donde $\frac{k}{n} \not\in S_x$.  \\ \\
-Definamos $f:(0,1) \longrightarrow \mathbb{R}$ dada por $f(x) = \sup S_x$. Nos damos cuenta que: \\ \\
-\hspace{2cm} $(i)$ Cuando $x=a$, se cumple que $a^1 = a$, por lo cual $1 \in S_a$ y si $0<k<1$, entonces $k \in S_a$; ademas, si $k>1$, entonces $k \not\in S_a$. De este modo, $f(a) = \sup S_a 1$. \\ \\
+\textbf{Demostración:} \\ \\
+Fijemos $x \in (0,1)$ arbitrario. Definimos $S_x = \left\{ \frac{k}{n} \in \mathbb{Q} \ | \ a^{\frac{k}{n}} \leq x \right\} \subseteq \mathbb{R}$. Este conjunto es no vacío, pues, por la \textbf{Desigualdad de Bernoulli}, para cualesquiera $h>0$ y $n \in \mathbb{N}$, se cumple \[(1+h)^n \geq 1 + nh.\] Sea $a=1+h$ para algún $h>0$ (este existe, una de las razones es que $a>1$), entonces  \[a^n \geq 1+nh > x\] (pues $x \in (0,1)$. De este modo, \[a^{-n} < x.\]
+Así, $-n \in S_x$ para todo $n \in \mathbb{N}$. Además, está acotado superiormente (con el orden usual), pues, si $k\geq n$, entonces $\frac{k}{n} \geq 1$ de donde $\frac{k}{n} \not\in S_x$.  \\ \\
+Definamos $f:(0,1) \longrightarrow \mathbb{R}$ dada por $f(x) = \sup S_x$. Nos damos cuenta de que: \\ \\
+\hspace{2cm} $(i)$ Cuando $x=a$, se cumple que $a^1 = a$, por lo cual $1 \in S_a$ y si $0<k<1$, entonces $k \in S_a$; además, si $k>1$, entonces $k \not\in S_a$. De este modo, $f(a) = \sup S_a 1$. \\ \\
 \hspace{2cm} $(ii)$ $f(xy) = \sup S_{xy} = \sup \left\{ \frac{k}{n} \in \mathbb{Q} \ | \ a^{\frac{k}{n}} \leq xy \right\}$. Ahora bien, si $q \in S_x$ y $r \in S_y$, entonces $a^{q+r} = a^q a^r \leq xy$, lo que implica $q+r \in S_{xy}$, por lo tanto $S_x + S_y \subseteq S_{xy}$ y $\sup S_x + \sup S_y \leq \sup S_{xy}$. \\ \\ Inversamente, $\forall \epsilon > 0$, existen $q \in \mathbb{Q} \cap (f(x)-\epsilon, f(x)]$ y $r \in \mathbb{Q} \cap (f(y)-\epsilon, f(y)]$ tales que $a^{q+r} \leq xy$ es arbitrariamente cercano a $xy$. \\ \\
-Ademas, $f$ es creciente. En efecto, \\ \\
+Además, $f$ es creciente. En efecto, \\ \\
 Por la densidad de $\mathbb{Q}$ y la continuidad de $a^z$, resultando en $\sup S_{xy} \leq \sup S_x + \sup S_y$. 
 Así, $f(xy) = \sup S_{xy} = \sup(S_x + S_y) = \sup S_x + \sup S_y = f(x) + f(y)$. \\ \\
-Veamos ahora que, en efecto, esta funcion es unica. Razonando por reduccion al absurdo, supongamos que existe $x \in (0,1)$ tal que $f(x) \neq \sup S_x$. Necesitaremos mostrar por induccion que $f(x^n) = n f(x)$: \\ \\
+Veamos ahora que, en efecto, esta función es única. Razonando por reducción al absurdo, supongamos que existe $x \in (0,1)$ tal que $f(x) \neq \sup S_x$. Necesitaremos mostrar por inducción que $f(x^n) = n f(x)$: \\ \\
 \textbf{\underline{n=2}:} $f(x^2) = f(x \cdot x) = f(x) + f(x)$. \\ \\
 \textbf{\underline{H.I}:} Supongamos que $f(x^{n-1}) = (n-1)f(x)$, para ciertos $n \in \mathbb{N}$. \\ \\
-\textbf{\underline{P.I}:} Al realizar los calculos, tenemos que \[ f(x^n) = f(x^{n-1} \cdot x) = f(x^{n-1}) + f(x) = (n-1)f(x) + f(x) = nf(x). \] Asi, por el principio de induccion matematica, concluimos que $f(x^n) = nf(x)$ para todo $n \in \mathbb{Z}$. \\ \\
-Veamos con ello la unicidad de $f$. Supongamos que existe $g: (0,1) \longrightarrow \mathbb{R}$ que cumple las mismas condiciones hipotesis. Dado $x \in (0, 1)$ y $\frac{k}{n} \in \mathbb{Q}$ con $n \in \mathbb{Q}$. \\ \\
+\textbf{\underline{P.I}:} Al realizar los cálculos, tenemos que \[ f(x^n) = f(x^{n-1} \cdot x) = f(x^{n-1}) + f(x) = (n-1)f(x) + f(x) = nf(x). \] Así, por el principio de inducción matemática, concluimos que $f(x^n) = nf(x)$ para todo $n \in \mathbb{Z}$. \\ \\
+Veamos con ello la unicidad de $f$. Supongamos que existe $g: (0,1) \longrightarrow \mathbb{R}$ que cumple las mismas condiciones de hipótesis. Dado $x \in (0, 1)$ y $\frac{k}{n} \in \mathbb{Q}$ con $n \in \mathbb{Q}$. \\ \\
 Por el resultado anterior, $g(x^n) = ng(x)$, de donde $g(x^{-n}) = -ng(x)$ (pues $g(x) = g(y^n) = n g(y) = n g(x^{1/n})$ y por tanto,  $ g(x^{1/n}) = \frac{1}{n} g(x)$) y 
 $g(x^{k/n}) = g(x) = \frac{k}{n} g(x)$ (pues $g(x^{k/n}) = g((x^{1/n})^k) = k g(x^{1/n}) = \frac{k}{n} g(x)$). \\ \\
 Si 
@@ -101,14 +101,14 @@ $q' > f(x)$, entonces
 $a^{q'} > x \text{ por lo cual } g(a^{q'}) \geq g(x) \text{ y con esto, } q' \geq g(x)$, de donde 
 $g(x) = \sup \{ q \in \mathbb{Q} \mid q \leq g(x) \} = f(x)$. \\ \\
 Por lo tanto, 
-$f = g$ es la única función que satisface las hipotesis. De este modo, $f(x) = \sup S_x = \log_a(x)$. De ahora en adelante, trabajaremos con $a=2$. \\ \\
-Para representar la informacion, buscamos una funcion $I: S \longrightarrow C $ entre los dos conjuntos independientes de interes ($S$ fuente y $C$ destino), tales que $|S| = W_1$ y $|C| = W_2$. \\ \\ Por el \textbf{Axioma de Aditividad de Shannon-Khinchin}, sabemos que la informacion conjunta obtenida de dos sistemas independientes, es la suma de la informacion de cada una. Asi, $I(w_1 w_2) = I(w_1) + I(w_2)$. Esto nos dice que la funcion de informacion que buscamos es monotona creciente; en particular, como la concatenacion y la adicion son operaciones binarias, tenemos que  \[ I(w^k) = kI(w), \quad \forall k \in \mathbb{Z}^+.\]
-Ahora, tomemos dos bases distintas $a,b \in \mathbb{R}$. Por la propiedad Arquimediana, para $m \gg 1$, podemos encontrar $n \in \mathbb{Z}^+$ tal que \[a^n \leq b^m < a^{n+1}.\]
-Como $I$ es monotona creciente, tenemos que \[I(a^n) \leq I(b^m) < I(a^{n+1}),\] por lo cual \[nI(a) \leq mI(b) < (n+1) I(a),\] y con ello, \[\frac{n}{m} \leq \frac{I(b)}{I(a)} < \frac{n+1}{m}.\]
-Por otro lado, de la desigualdad inicial, tenemos que \[\log (a^n) \leq  \log (b^m)< \log (a^{n+1}),\] lo cual implica que \[n \log (a) \leq m \log(b) < (n+1) \log(a),\] y asi, \[\frac{n}{m} \leq \frac{\log b}{\log a} < \frac{n+1}{m}.\]
+$f = g$ es la única función que satisface las hipótesis. De este modo, $f(x) = \sup S_x = \log_a(x)$. De ahora en adelante, trabajaremos con $a=2$. \\ \\
+Para representar la información, buscamos una función $I: S \longrightarrow C $ entre los dos conjuntos independientes de interés ($S$ fuente y $C$ destino), tales que $|S| = W_1$ y $|C| = W_2$. \\ \\ Por el \textbf{Axioma de Aditividad de Shannon-Khinchin}, sabemos que la información conjunta obtenida de dos sistemas independientes es la suma de la información de cada una. Así, $I(w_1 w_2) = I(w_1) + I(w_2)$. Esto nos dice que la función de información que buscamos es monótona creciente; en particular, como la concatenación y la adición son operaciones binarias, tenemos que  \[ I(w^k) = kI(w), \quad \forall k \in \mathbb{Z}^+.\]
+Ahora, tomemos dos bases distintas $a,b \in \mathbb{R}$. Por la propiedad arquimediana, para $m \gg 1$, podemos encontrar $n \in \mathbb{Z}^+$ tal que \[a^n \leq b^m < a^{n+1}.\]
+Como $I$ es monótona creciente, tenemos que \[I(a^n) \leq I(b^m) < I(a^{n+1}),\] por lo cual \[nI(a) \leq mI(b) < (n+1) I(a),\] y con ello, \[\frac{n}{m} \leq \frac{I(b)}{I(a)} < \frac{n+1}{m}.\]
+Por otro lado, de la desigualdad inicial, tenemos que \[\log (a^n) \leq  \log (b^m)< \log (a^{n+1}),\] lo cual implica que \[n \log (a) \leq m \log(b) < (n+1) \log(a),\] y así, \[\frac{n}{m} \leq \frac{\log b}{\log a} < \frac{n+1}{m}.\]
 De este modo, para $m \gg 1, \ \frac{1}{m} \ll 1$, de donde concluimos que $\frac{I(b)}{I(a)} \sim \frac{\log b}{\log a} \sim k \in \mathbb{R}$. Luego, $I(W) \sim \log(W)$ y, como vimos previamente, esto fuerza que $I$ se comporte como un logaritmo. \\ \\
-Por otro lado, si la informacion total contenida en un mensaje de $N$ simbolos es $I$, la \textit{densidad de informacion} o \textit{informacion media} por simbolo es \[ \text{Inf.Prom.} = \frac{I}{N} = \frac{\log W}{N} \] y como previamente vimos que el numero de maneras de ordenar tales simbolos es \[W = \frac{N!}{\Pi_{i=1}^n \ N_i!} = \frac{N!}{\Pi_{i=1}^n \ (N \cdot p_i)},\] tenemos que \[\text{Inf.Prom.} = \frac{1}{N} \log \left( \frac{N!}{\Pi_{i=1}^n \ N_i!} \right). \] 
-Ahora bien, si $A$ y $B$ son eventos independientes, tenemos que \[I[P(A \cap B)] = I[P(A) \cdot P(B)] = I[P(A)] + I[P(B)].\] Llamaremos, sin perdida de generalidad, $p_1:= p(A)$ y $p_2:= p(B)$; luego, \[I(p_1 \cdot p_2) = I(p_1) + I(p_2).\] Derivamos respecto a $p_2$, por lo cual \[\frac{d}{dp_2} [ I(p_1 \cdot p_2)] = \frac{d}{dp_2} [ I(p_1) + I(p_2)],\] de donde obtenemos \[p_1 I'(p_1\cdot p_2) = I'(p_2).\]
+Por otro lado, si la información total contenida en un mensaje de $N$ símbolos es $I$, la \textit{densidad de información} o \textit{información media} por símbolo es \[ \text{Inf.Prom.} = \frac{I}{N} = \frac{\log W}{N} \] y como previamente vimos que el número de maneras de ordenar tales símbolos es \[W = \frac{N!}{\Pi_{i=1}^n \ N_i!} = \frac{N!}{\Pi_{i=1}^n \ (N \cdot p_i)},\] tenemos que \[\text{Inf.Prom.} = \frac{1}{N} \log \left( \frac{N!}{\Pi_{i=1}^n \ N_i!} \right). \]
+Ahora bien, si $A$ y $B$ son eventos independientes, tenemos que \[I[P(A \cap B)] = I[P(A) \cdot P(B)] = I[P(A)] + I[P(B)].\] Llamaremos, sin pérdida de generalidad, $p_1:= p(A)$ y $p_2:= p(B)$; luego, \[I(p_1 \cdot p_2) = I(p_1) + I(p_2).\] Derivamos respecto a $p_2$, por lo cual \[\frac{d}{dp_2} [ I(p_1 \cdot p_2)] = \frac{d}{dp_2} [ I(p_1) + I(p_2)],\] de donde obtenemos \[p_1 I'(p_1\cdot p_2) = I'(p_2).\]
 Sea $p_2 = 1$, entonces
 \begin{align*}
     & \quad p_1  I'(p_1) = I'(1) &\\ \\
@@ -116,9 +116,9 @@ Sea $p_2 = 1$, entonces
     &  \implies \int I'(p_1) d p_1 = \int \frac{I'(1)}{p_1} dp_1 &\\ \\
     & \implies I(p_1) = I'(1) \log (p_1) + C.
 \end{align*}
-Ahora bien, si un evento es certero a ocurrir (p=1), este aporta cero informacion (pues ya sabemos lo que va a pasar). Luego,\[I(1) = I'(1) \ln(1) + C = 0+ C = 0,\] de lo cual tenemos que $C=0$. Ademas, la informacion debe incrementar a medida que la probabhilidad decrece (en virtud del Axioma de Maximalidad de Shannon-Khinchin Maximality) y como $\log p <0$ cuando $0 < p < 1$, tenemos que $I'(1)<0$ para que se cumpla $I(p)>0$. \\ \\
-Sabemos, ademas, que $\log(x) < 0$ para cualquier $x \in (0,1)$, y ponderando con la distribucion de probabilidad, entonces $I'(1) = -1$. Asi, $I(p) = - \log (p)$. \\ \\
-Recordando la \textbf{formula de Stirling} $\ln m! = m \ln m - m + O(\ln m)$, tenemos que
+Ahora bien, si un evento es certero a ocurrir (p=1), este aporta cero información (pues ya sabemos lo que va a pasar). Luego,\[I(1) = I'(1) \ln(1) + C = 0+ C = 0,\] de lo cual tenemos que $C=0$. Además, la información debe incrementar a medida que la probabilidad decrece (en virtud del Axioma de Maximalidad de Shannon-Khinchin Maximality) y como $\log p <0$ cuando $0 < p < 1$, tenemos que $I'(1)<0$ para que se cumpla $I(p)>0$. \\ \\
+Sabemos, además, que $\log(x) < 0$ para cualquier $x \in (0,1)$, y ponderando con la distribución de probabilidad, entonces $I'(1) = -1$. Así, $I(p) = - \log (p)$. \\ \\
+Recordando la \textbf{fórmula de Stirling} $\ln m! = m \ln m - m + O(\ln m)$, tenemos que
 \begin{align*}
     \text{Inf.Prom.} &= \frac{1}{N} \log W &\\ \\
     &= \frac{1}{N} \left[ \log N! - \Sigma_{i=1}^n \log (N p_i)! \right] &\\ \\
@@ -128,11 +128,11 @@ Recordando la \textbf{formula de Stirling} $\ln m! = m \ln m - m + O(\ln m)$, te
     & = - \frac{1}{N} \Sigma_{i=1}^n N p_i \log p_i &\\ \\
     & = - \Sigma_{i=1}^n p_i \log p_i.
 \end{align*}
-Por el \textbf{Teorema de Khinchin}, sabemos que $H(X)$ es la \textit{unica} y \textit{necesaria} medida para la tasa de informacion promedio (es decir, la media de informacion). Ademas, pequenos cambios en $H(X)$ implican pequenos cambios en $p_i$, para $i = 1, ... , n$, por lo cual utilizaremos el siguiente resultado (que no mostraremos, pues sale del proposito del ejercicio): \\ \\
-\textbf{\underline{Teorema} (Ley Debil de los Numeros Grandes):} \\
-Dada una sucesion $\{X_n\}$ de muestras independientes e identicamente distribuidas ($i.i.d$) de una variable aleatoria $X$ tal que $E(X) = a \in \mathbb{R}$, existe $\varepsilon >0$ tal que \[ \lim_{n \longrightarrow \infty} P(|\overline{x_n}-a|< \varepsilon) = 1.\]
-De este modo, si $Y$ modela la informacun de un evento $y_i = p_i \log p_i$, tenemos que $P(x_1,...,x_N) = \Pi_{i=1}^N \ p_i$ (pues son eventos independientes). Asi, \[ \frac{1}{N} \log P(x_1,...,x_N) = \frac{1}{N} \ \Sigma_{i=1}^n \log p_i\]. \\ 
-Por la Ley Debil de los Numeros Grandes, tenemos que \[ \lim_{N \rightarrow \infty} P \left( \left| \frac{1}{N} \Sigma_{i=1}^N y_i - E[y] \gg \varepsilon \right| \right) =0 \] y como $y_i = p_i \log p_i$, entonces 
+Por el \textbf{Teorema de Khinchin}, sabemos que $H(X)$ es la \textit{única} y \textit{necesaria} medida para la tasa de información promedio (es decir, la media de información). Además, pequeños cambios en $H(X)$ implican pequeños cambios en $p_i$, para $i = 1, ... , n$, por lo cual utilizaremos el siguiente resultado (que no mostraremos, pues sale del propósito del ejercicio): \\ \\
+\textbf{\underline{Teorema} (Ley Débil de los Números Grandes):} \\
+Dada una sucesión $\{X_n\}$ de muestras independientes e idénticamente distribuidas ($i.i.d$) de una variable aleatoria $X$ tal que $E(X) = a \in \mathbb{R}$, existe $\varepsilon >0$ tal que \[ \lim_{n \longrightarrow \infty} P(|\overline{x_n}-a|< \varepsilon) = 1.\]
+De este modo, si $Y$ modela la información de un evento $y_i = p_i \log p_i$, tenemos que $P(x_1,...,x_N) = \Pi_{i=1}^N \ p_i$ (pues son eventos independientes). Así, \[ \frac{1}{N} \log P(x_1,...,x_N) = \frac{1}{N} \ \Sigma_{i=1}^n \log p_i\]. \\
+Por la Ley Débil de los Números Grandes, tenemos que \[ \lim_{N \rightarrow \infty} P \left( \left| \frac{1}{N} \Sigma_{i=1}^N y_i - E[y] \gg \varepsilon \right| \right) =0 \] y como $y_i = p_i \log p_i$, entonces
 \begin{align*}
     H(X) &= \text{Inf.Prom.} &\\ 
     &= E[\log P(x_1,...,x_N)] &\\
@@ -147,7 +147,7 @@ por lo cual, cuando $N \to \infty$,
 \section{Tarea 2}
 \subsection{Demostrar la desigualdad de Markov}
 \noindent Para $X>0$ una variable aleatoria tal que $E(X) = \mu$ y $a >0$, mostrar que \[P(X \geq a) \leq \frac{E(X)}{a}.\]
-\textbf{Demostracion:} Por definicion, $E[X] = \int_0^\infty x f(x) dx $; luego,
+\textbf{Demostración:} Por definición, $E[X] = \int_0^\infty x f(x) dx $; luego,
 \begin{align*}
     E[X] &= \int_0^\infty x f(x) dx &\\ \\
     &= \int_0^a x f(x) dx + \int_a^\infty x f(x) dx &\\ \\ 
@@ -166,7 +166,7 @@ Ahora, si $X$ es discreta, tenemos que
 \end{align*}
 \subsection{Demostrar la desigualdad de Chebyshev}
 \noindent Sea $X$ una variable aleatoria con $E[X] = \mu \in \mathbb{R}$ y $\mathrm{Var}(X) \in \mathbb{R}$. Entonces, para cualquier $a>0$, \[P(|X - \mu | \geq a) \leq \frac{\mathrm{Var}(X)}{a^2}.\]
-\textbf{Demostracion:} Sea $X$ una variable aleatoria, entonces $(X - E[X])^2 \geq 0$ tambien es variable aleatoria (pues desplazamientos y elevar al cuadrado preservan aleatoridad). Aplicando la desigualdad de Markov, tenemos que
+\textbf{Demostración:} Sea $X$ una variable aleatoria, entonces $(X - E[X])^2 \geq 0$ también es variable aleatoria (pues desplazamientos y elevar al cuadrado preservan aleatoriedad). Aplicando la desigualdad de Markov, tenemos que
 \begin{align*}
     P(|X - E[X]| \geq a) 
     &= P\left[(X-E[X])^2 \geq a^2\right] &\\ \\
@@ -175,7 +175,7 @@ Ahora, si $X$ es discreta, tenemos que
 \end{align*}
 \subsection{Demostrar la desigualdad de Hoeffding}
 \noindent Sea $X$ una variable aleatoria que se puede expresar como la suma de $N$ variables aleatorias independientes, cada una acotada en el intervalo $[l_i,u_i]$: \[X = \Sigma_{i=1}^n X_i.\] Entonces, para cualquier $a>0$, \[P(|X-E[X]|>a) \leq e^{-\frac{2a^2}{\Sigma_{i=1}^N \ (u_i - l_i)}}.\]
-\textbf{Demostracion:} 
+\textbf{Demostración:}
 Sea $X$ una variable aleatoria tal que $X = \sum_{i=1}^N X_i$, donde las $X_i$ son variables aleatorias independientes y cada una está acotada en el intervalo $[l_i, u_i]$. Necesitaremos algunos lemas:
 \begin{lemma}[Lema de Hoeffding para una variable]
 Sea $Z$ una variable aleatoria tal que $Z \in [l, u]$. Entonces para cualquier $\lambda \in \mathbb{R}$:
@@ -218,9 +218,9 @@ P(|X - \mathbb{E}[X]| \geq a) \leq 2\exp\left( -\frac{2a^2}{\sum_{i=1}^N (u_i - 
 \end{proof}
 \section{Tarea 3: Support Vector Machine}
 Consultar en \hyperlink{https://colab.research.google.com/drive/1PkO9KV9lTNLd1QfVFIFTe7x3J4I-Q_pE?usp=sharing}{Cuaderno con SVM}.
-\section{Tarea 4: Articulo}
-\noindent Responder detalladame como se logro resolver el reto netflix a partir de la solucion del problema de factorizacion de matrices NO negativas (Sugerencia: Hacer un paralelo de Temas vs Tematicas  y de Tematicas vs Peliculas; deducir como es el comportamiento de la factorizacion a partir de este paralelo). \\ \\
-\textbf{Analisis:} 
+\section{Tarea 4: Artículo}
+\noindent Responder detalladamente cómo se logró resolver el reto Netflix a partir de la solución del problema de factorización de matrices no negativas (Sugerencia: Hacer un paralelo de temas vs. temáticas y de temáticas vs. películas; deducir cómo es el comportamiento de la factorización a partir de este paralelo). \\ \\
+\textbf{Análisis:}
 El problema se aborda mediante la reducción de una matriz de calificaciones dispersa $W \in \mathbb{R}^{m \times n}$, donde $m$ es el número de usuarios y $n$ el de películas. El objetivo es proyectar tanto a usuarios como a ítems en un espacio latente común de dimensión $k \ll \min(m, n)$. Matemáticamente, esto se traduce en encontrar una aproximación de rango bajo que capture las estructuras semánticas (temáticas) subyacentes. \\ \\
 La aproximación se fundamenta en el teorema de SVD, que descompone la matriz original como $W \approx U \Sigma V^{T}$. En este contexto, $U \in \mathbb{R}^{m \times k}$ es una matriz ortogonal cuyas filas representan vectores de afinidad de los usuarios, $V \in \mathbb{R}^{n \times k}$ representa la pertenencia de las películas a los factores latentes, y $\Sigma \in \mathbb{R}^{k \times k}$ es una matriz diagonal que contiene los valores singulares que ponderan la importancia de cada dimensión latente. \\ \\
 Cada entrada $w_{ij}$ de la matriz reconstruida se calcula mediante el producto escalar de los vectores latentes: $\hat{w}_{ij} = \sum_{r=1}^{k} \sigma_r u_{ir} v_{jr}$. Esta estructura permite modelar la interacción usuario-película a través de un "puente" de $k$ variables ocultas, similar a la lógica de la Factorización de Matrices No Negativas (NMF), donde los componentes son interpretables como características temáticas. \\ \\
@@ -240,19 +240,19 @@ La métrica de éxito es el Error Cuadrático Medio Raíz (RMSE):
 \[ \text{RMSE} = \sqrt{\frac{1}{N} \sum_{t=1}^{N} (y_t - \hat{y}_t)^2} \]
 El logro de un RMSE de $0.256$ frente a modelos triviales ($0.279$) valida matemáticamente que la descomposición en factores latentes es capaz de extraer señales significativas de datos altamente ruidosos y dispersos.
 \section{Tarea 5: K-Nearest-Neighbours}
-\noindent Cual es el conjunto de hipotesis del modelo de aprendizaje \textit{K-Nearest Neighbours}? Cual es su modelo de aprendizaje? \\ \\
-\textbf{Analisis:} \\ \\
+\noindent ¿Cuál es el conjunto de hipótesis del modelo de aprendizaje \textit{K-Nearest Neighbours}? ¿Cuál es su modelo de aprendizaje? \\ \\
+\textbf{Análisis:} \\ \\
 El conjunto de hipótesis $\mathcal{H}$ en un modelo $K$-NN está intrínsecamente ligado a la geometría del espacio métrico $(\mathbb{R}^d, d)$. Para $K=1$, la hipótesis induce una teselación de Voronoi donde el espacio se particiona en regiones $\mathcal{R}_i = \{x \in \mathbb{R}^d : d(x, x_i) \leq d(x, x_j) \forall j \neq i\}$, siendo $x_i$ un vector del conjunto de entrenamiento $\mathcal{D}$. Para un $K$ arbitrario, la función de decisión $\hat{f}(x)$ se define como la agregación local $\text{mode}\{y_i\}_{i \in N_K(x)}$ para clasificación o $\frac{1}{K} \sum_{i \in N_K(x)} y_i$ para regresión, donde $N_K(x)$ es el conjunto de los $K$ índices de los vectores más cercanos a $x$. Esta aproximación representa una función constante por pedazos cuya complejidad, medida a través de la dimensión VC, es inversamente proporcional a $K$, permitiendo una adaptación no paramétrica a la topología de la distribución subyacente de los datos. \\ \\ 
 Desde la perspectiva de la teoría de la computación, el algoritmo KNN opera bajo un paradigma de \textit{lazy learning}, donde la fase de entrenamiento se reduce a una operación de complejidad temporal $\mathcal{O}(1)$ (almacenamiento en memoria de $\mathcal{D}$). La inducción no produce un modelo paramétrico explícito $\theta$, sino que delega el costo computacional a la fase de consulta (inferencia). Matemáticamente, la estimación de la función objetivo en un punto de consulta $x_q$ requiere evaluar un funcional de distancia $d(x_q, x_i)$ sobre la totalidad del conjunto de soporte, resultando en una complejidad de búsqueda de $\mathcal{O}(nd)$ en su forma ingenua. Al no existir una minimización de una función de pérdida global durante el entrenamiento, el modelo realiza una aproximación local de la esperanza condicional $E[Y|X=x]$, fundamentando su convergencia en el hecho de que, conforme $n \to \infty$ y $K/n \to 0$, el error del vecino más cercano se aproxima asintóticamente a no más del doble del error de Bayes.
 \section{Tarea 6: Aprendizaje Supervisado}
-\noindent En aprendizaje supervisado, por que partimos de la suposicion de trabajar con un conjunto de entrenamiento de ejemplares independientes e identicamente distribuidos (IID)?\\ \\
-\textbf{Analisis:} La suposición de que los datos \[\mathcal{D} = \{(x_i, y_i)\}_{i=1}^n\] son Independientes e Idénticamente Distribuidos (IID) permite la factorización de la densidad conjunta del conjunto de datos en el producto de sus densidades marginales: \[P(\mathcal{D}) = \prod_{i=1}^n P(x_i, y_i).\] En el marco de la Estimación de Máxima Verosimilitud (MLE), esta propiedad transforma el problema de optimización de una densidad conjunta de $n$ dimensiones en la maximización de la suma de log-verosimilitudes individuales: \[\hat{\theta} = \arg\max_{\theta} \sum_{i=1}^n \log P(x_i, y_i | \theta).\] A nivel tecnico, la independencia elimina los términos de covarianza y dependencia condicional cruzada entre observaciones, reduciendo la complejidad computacional de un crecimiento exponencial a una relación lineal $\mathcal{O}(n)$ respecto al tamaño de la muestra, garantizando la viabilidad del entrenamiento en espacios de parámetros de alta dimensionalidad. \\ \\
+\noindent En aprendizaje supervisado, ¿por qué partimos de la suposición de trabajar con un conjunto de entrenamiento de ejemplares independientes e idénticamente distribuidos (IID)?\\ \\
+\textbf{Análisis:} La suposición de que los datos \[\mathcal{D} = \{(x_i, y_i)\}_{i=1}^n\] son Independientes e Idénticamente Distribuidos (IID) permite la factorización de la densidad conjunta del conjunto de datos en el producto de sus densidades marginales: \[P(\mathcal{D}) = \prod_{i=1}^n P(x_i, y_i).\] En el marco de la Estimación de Máxima Verosimilitud (MLE), esta propiedad transforma el problema de optimización de una densidad conjunta de $n$ dimensiones en la maximización de la suma de log-verosimilitudes individuales: \[\hat{\theta} = \arg\max_{\theta} \sum_{i=1}^n \log P(x_i, y_i | \theta).\] A nivel técnico, la independencia elimina los términos de covarianza y dependencia condicional cruzada entre observaciones, reduciendo la complejidad computacional de un crecimiento exponencial a una relación lineal $\mathcal{O}(n)$ respecto al tamaño de la muestra, garantizando la viabilidad del entrenamiento en espacios de parámetros de alta dimensionalidad. \\ \\
 La asunción IID es el fundamento de la Minimización del Riesgo Empírico (ERM), ya que asegura que la muestra de entrenamiento es representativa de la población total $P(X,Y)$. Bajo esta premisa, el riesgo empírico \[R_{emp}(f) = \frac{1}{n} \sum_{i=1}^n \mathcal{L}(f(x_i), y_i)\] se comporta como un estimador insesgado del riesgo teórico \[R(f) = \mathbb{E}_{(X,Y)\sim P}[\mathcal{L}(f(X), Y)].\] De acuerdo con la Ley Fuerte de los Grandes Números y los resultados de Vapnik-Chervonenkis, se garantiza la convergencia uniforme: \[P(\sup_{f \in \mathcal{H}} |R_{emp}(f) - R(f)| > \epsilon) \to 0\] cuando $n \to \infty$. Esta cota asegura que un modelo que minimiza eficazmente la pérdida sobre los datos observados tendrá, con alta probabilidad, un error de generalización acotado sobre datos no vistos, siempre que estos provengan de la misma distribución subyacente.
 \section{Tarea 7: Perceptrones}
-\noindent Exponer a detalle cual es el algoritmo de aprendizaje del modelo de aprendizaje basado en perceptrones. \\ \\
-\textbf{Analisis:} El Perceptrón establece un modelo de clasificación binaria mediante un hiperplano separador en $\mathbb{R}^d$ definido por la ecuación afín \[f(x) = w^T x + b.\] La hipótesis de decisión se formaliza mediante la función de activación signo, \[\hat{y} = \text{sgn}(w^T x + b),\] la cual mapea el espacio de entrada a etiquetas discretas $y \in \{-1, +1\}$. Matemáticamente, el objetivo es minimizar el cardinal del conjunto de muestras mal clasificadas $\mathcal{M}$, pero dado que dicha función es discontinua, el algoritmo utiliza el criterio de error del Perceptrón: \[L(w, b) = -\sum_{i \in \mathcal{M}} y_i (w^T x_i + b).\] Esta función de costo es continua y convexa por trozos, y representa la suma de las distancias funcionales de las observaciones erróneas al hiperplano de decisión. \\ \\
+\noindent Exponer a detalle cuál es el algoritmo de aprendizaje del modelo de aprendizaje basado en perceptrones. \\ \\
+\textbf{Análisis:} El Perceptrón establece un modelo de clasificación binaria mediante un hiperplano separador en $\mathbb{R}^d$ definido por la ecuación afín \[f(x) = w^T x + b.\] La hipótesis de decisión se formaliza mediante la función de activación signo, \[\hat{y} = \text{sgn}(w^T x + b),\] la cual mapea el espacio de entrada a etiquetas discretas $y \in \{-1, +1\}$. Matemáticamente, el objetivo es minimizar el cardinal del conjunto de muestras mal clasificadas $\mathcal{M}$, pero dado que dicha función es discontinua, el algoritmo utiliza el criterio de error del Perceptrón: \[L(w, b) = -\sum_{i \in \mathcal{M}} y_i (w^T x_i + b).\] Esta función de costo es continua y convexa por trozos, y representa la suma de las distancias funcionales de las observaciones erróneas al hiperplano de decisión. \\ \\
 La minimización del riesgo empírico $L(w, b)$ no se realiza de forma analítica global, sino mediante Descenso de Gradiente Estocástico. Para cada instancia $(x_i, y_i)$ que satisface la condición de error \[y_i (w^T x_i + b) \leq 0\], el algoritmo calcula el gradiente local de la pérdida, resultando en \[\nabla_w L = -y_i x_i\] y \[\nabla_b L = -y_i.\] Aplicando una tasa de aprendizaje $\eta \in (0, 1]$, obtenemos las reglas de actualización vectorial: \[w^{(t+1)} = w^{(t)} + \eta y_i x_i\] y \[^{(t+1)} = b^{(t)} + \eta y_i.\] El álgebra lineal nos dice que cada actualización suma una fracción del vector de características al vector de pesos, rotando el hiperplano hacia una orientación que incrementa el margen funcional de la muestra errónea hasta corregir su clasificación. \\ \\
-La estabilidad computacional del algoritmo está supeditada a la estructura de los datos. Según el Teorema  de Novikoff (o de Convergencia del Perceptrón), si el conjunto de datos es linealmente separable, existe un hiperplano óptimo con un margen geométrico $\gamma > 0$ tal que \[y_i (w^{*T} x_i) \geq \gamma.\] En este escenario, el número total de correcciones $k$ está acotado superiormente por $k \leq \frac{R^2}{\gamma^2}$, donde $R = \max \|x_i\|$ es el radio de la bola que contiene los datos. \\ \\Esta cota garantiza que el algoritmo alcanzará el error cero en tiempo constante. Por el contrario, en presencia de ruido o datos no separables ($\gamma \leq 0$), el algoritmo entra en un ciclo de oscilación infinita, lo que requiere la implementación de mecanismos de estabilidad como el algoritmo \textit{Pocket}. En este, Al fijar un límite de iteraciones $T_{max}$, se garantiza que el resultado final \[w_{final} = \hat{w}_{pocket}^{(T_{max})}\] sea, por construcción, el mejor candidato dentro del subespacio de parámetros explorado. Aunque no garantiza alcanzar el óptimo global absoluto en tiempo polinomial, asegura que el error de entrenamiento $\epsilon$ será menor o igual al error de cualquier otro estado visitado, proporcionando una solución robusta frente al ruido y al solapamiento de clases. Para finalizar esta tarea, quise poner el pseudocodigo del algoritmo que acabamos de discutir y del perceptron tambien, ayudandome de ChatGPT para su creacion en base a la discusion realizada.
+La estabilidad computacional del algoritmo está supeditada a la estructura de los datos. Según el Teorema de Novikoff (o de Convergencia del Perceptrón), si el conjunto de datos es linealmente separable, existe un hiperplano óptimo con un margen geométrico $\gamma > 0$ tal que \[y_i (w^{*T} x_i) \geq \gamma.\] En este escenario, el número total de correcciones $k$ está acotado superiormente por $k \leq \frac{R^2}{\gamma^2}$, donde $R = \max \|x_i\|$ es el radio de la bola que contiene los datos. \\ \\Esta cota garantiza que el algoritmo alcanzará el error cero en tiempo constante. Por el contrario, en presencia de ruido o datos no separables ($\gamma \leq 0$), el algoritmo entra en un ciclo de oscilación infinita, lo que requiere la implementación de mecanismos de estabilidad como el algoritmo \textit{Pocket}. En este, al fijar un límite de iteraciones $T_{max}$, se garantiza que el resultado final \[w_{final} = \hat{w}_{pocket}^{(T_{max})}\] sea, por construcción, el mejor candidato dentro del subespacio de parámetros explorado. Aunque no garantiza alcanzar el óptimo global absoluto en tiempo polinomial, asegura que el error de entrenamiento $\epsilon$ será menor o igual al error de cualquier otro estado visitado, proporcionando una solución robusta frente al ruido y al solapamiento de clases. Para finalizar esta tarea, quise poner el pseudocódigo del algoritmo que acabamos de discutir y del perceptrón también, ayudándome de ChatGPT para su creación con base en la discusión realizada.
 
 \begin{algorithm}
 \caption{Algoritmo Pocket (Variante Estable del Perceptrón)}
@@ -366,8 +366,8 @@ $b\in\mathbb{R}$
 \end{algorithm}
 
 \section{Tarea 8: Imposibilidad de algoritmo universal}
-\noindent Explicar detalladamente por que \textbf{NO} existe un algoritmo de aprendizaje universal para conjuntos de hipotesis arbitrariamente distintos. \\ \\
-\textbf{Analisis:} 
+\noindent Explicar detalladamente por qué \textbf{NO} existe un algoritmo de aprendizaje universal para conjuntos de hipótesis arbitrariamente distintos. \\ \\
+\textbf{Análisis:}
 Sea $\mathcal{X}$ un dominio de entrada de cardinalidad finita y $\mathcal{Y} = \{0, 1\}$ el espacio de etiquetas. Consideramos el conjunto $\mathcal{F} = \mathcal{Y}^{\mathcal{X}}$ de todas las posibles funciones objetivo. Un algoritmo de aprendizaje $\mathcal{A}$ se define como una aplicación que mapea un conjunto de entrenamiento $\mathcal{S} = \{(x_i, y_i)\}_{i=1}^m$ a una hipótesis $h \in \mathcal{Y}^{\mathcal{X}}$. \\ \\
 El \textbf{Teorema del No Free Lunch} de Wolpert establece que, si el rendimiento de un algoritmo se mide por su error de generalización fuera de la muestra, el promedio de dicho error sobre todas las funciones $f \in \mathcal{F}$ es constante para cualquier $\mathcal{A}$. Formalmente:
  
@@ -379,7 +379,7 @@ Establecida la imposibilidad de un aprendiz universal, la teoría del aprendizaj
 \begin{equation}
 R(h) \leq \hat{R}_m(h) + \sqrt{\frac{8 d \ln(2em/d) + 8 \ln(4/\delta)}{m}}
 \end{equation}
-\noindent donde $d = \text{VC}(\mathcal{H})$ y $1-\delta$ es el nivel de confianza. Si un algoritmo intentara operar sobre la totalidad de $\mathcal{F}$, se tendría $d \to \infty$, lo que anularía la convergencia de la cota de error. Por tanto, el aprendizaje es teoricamente factible, si y solo si, se restringe la complejidad del espacio de búsqueda. \\ \\
+\noindent donde $d = \text{VC}(\mathcal{H})$ y $1-\delta$ es el nivel de confianza. Si un algoritmo intentara operar sobre la totalidad de $\mathcal{F}$, se tendría $d \to \infty$, lo que anularía la convergencia de la cota de error. Por tanto, el aprendizaje es teóricamente factible si y solo si se restringe la complejidad del espacio de búsqueda. \\ \\
 Desde la perspectiva de la computación algorítmica, la selección de la hipótesis óptima se formula como un problema de \textbf{Minimización del Riesgo Estructural} (SRM). Dado que la minimización del error empírico puro es un problema NP-duro para clases de hipótesis generales, el algoritmo implementa un sesgo inductivo a través de un funcional de regularización $\Omega(h)$. El proceso de optimización se define como:
  
 \begin{equation}
@@ -387,16 +387,16 @@ h^* = \arg \min_{h \in \mathcal{H}} \left\{ \frac{1}{m} \sum_{i=1}^m \ell(h(x_i)
 \end{equation}
 \noindent donde $\ell$ es la función de pérdida y $\lambda$ es el parámetro de penalización. Este esquema revela que el algoritmo no ``descubre'' conocimiento de forma pura, sino que proyecta las restricciones impuestas por $\Omega(h)$ —tales como la suavidad, la parsimonia (Norma $L_1$) o la invarianza topológica— sobre los datos. La eficiencia computacional se adquiere, por tanto, mediante la renuncia a la universalidad, transformando el aprendizaje en un ejercicio de optimización restringida. \\ \\
 Concluimos que la generalización es una transferencia de información desde el sesgo inductivo hacia la interpretación de la muestra. Por el \textbf{Lema Fundamental del Aprendizaje}, para cualquier algoritmo de aprendizaje $A$ y cualquier tamaño de muestra $m \leq d/2$, existe una distribución de probabilidad sobre $\mathcal{X} \times \mathcal{Y}$ tal que el error esperado de $A$ es al menos $1/4$, a pesar de que existe una hipótesis en $\mathcal{H}$ con error cero. \\ \\
-Esto demuestra que sin una estructura de regularidad estadística asumida a priori, la optimización deviene en una mera interpolación de ruido. La frontera epistemológica del aprendizaje reside en esta dualidad: no existe (por el momento) la piedra filosofal del aprendizaje, pues la capacidad de extraer leyes generales de la realidad física depende estrictamente del ingenio para acotar el espacio de posibilidades mediante hipótesis coherentes y estructuralmente finitas. En última instancia, el aprendizaje no es la ausencia de límites, sino la aplicación estratégica de los mismos, razon por la cual la existencia de un limite determinisitco de estas capacidades es sinceramente absurdo.
+Esto demuestra que sin una estructura de regularidad estadística asumida a priori, la optimización deviene en una mera interpolación de ruido. La frontera epistemológica del aprendizaje reside en esta dualidad: no existe (por el momento) la piedra filosofal del aprendizaje, pues la capacidad de extraer leyes generales de la realidad física depende estrictamente del ingenio para acotar el espacio de posibilidades mediante hipótesis coherentes y estructuralmente finitas. En última instancia, el aprendizaje no es la ausencia de límites, sino la aplicación estratégica de los mismos, razón por la cual la existencia de un límite determinístico de estas capacidades es sinceramente absurdo.
 \section{Tarea 9: Perceptrones en distribuciones Gaussianas}
 \noindent Construir un modelo de distribuciones Gaussianas en el plano e implementar en el modelo el algoritmo de perceptrones. \\ \\ 
-\textbf{Solucion:} Redirigirse al siguiente \hyperlink{https://colab.research.google.com/drive/1VsHPskZ8GEHAOjnnoC54lV5ICCNrOiIC?usp=sharing}{cuaderno} para la solucion.
+\textbf{Solución:} Redirigirse al siguiente \hyperlink{https://colab.research.google.com/drive/1VsHPskZ8GEHAOjnnoC54lV5ICCNrOiIC?usp=sharing}{cuaderno} para la solución.
 \section{Tarea 10: Perceptrones V.2}
-\noindent Respecto al Algoritmo de Aprendizaje de Perceptrones (previamente introducido en la Tarea 7), el algoritmo encuentra los parametros correctos (bajo que precision)? El algoritmo para en un numero finito de pasos? Por que funciona este algoritmo? Verificar que converge. \\ \\
-\textbf{Analisis:} El  Algoritmo de Aprendizaje de Perceptrones (PLA) funciona porqu, para cada actualizacion, el conjunto hipotesis acepta separabilidad lineal. Este Algoritmo garantiza un riesgo empírico nulo en datos linealmente separables:
+\noindent Respecto al Algoritmo de Aprendizaje de Perceptrones (previamente introducido en la Tarea 7), ¿el algoritmo encuentra los parámetros correctos (bajo qué precisión)? ¿El algoritmo para en un número finito de pasos? ¿Por qué funciona este algoritmo? Verificar que converge. \\ \\
+\textbf{Análisis:} El Algoritmo de Aprendizaje de Perceptrones (PLA) funciona porque, para cada actualización, el conjunto de hipótesis acepta separabilidad lineal. Este algoritmo garantiza un riesgo empírico nulo en datos linealmente separables:
 $$R_{emp}(w) = 0 \iff \forall i \in \{1, \dots, n\}: y_i(w^{*T}x_i + b^*) > 0$$
 \textbf{Nota:} La solución $w^*$ no es única y no maximiza el margen, lo que limita la precisión de generalización. \\ \\
-Bajo separabilidad lineal (hipotesis fundamental), existe $w^*$ con $\|w^*\| = 1$ y margen $\gamma > 0$ tal que $y_i(w^{*T}x_i) \geq \gamma$. El número máximo de actualizaciones $t$ está acotado por:
+Bajo separabilidad lineal (hipótesis fundamental), existe $w^*$ con $\|w^*\| = 1$ y margen $\gamma > 0$ tal que $y_i(w^{*T}x_i) \geq \gamma$. El número máximo de actualizaciones $t$ está acotado por:
 $$t \leq \left\lfloor \left( \frac{R}{\gamma} \right)^2 \right\rfloor, \quad R = \max_i \|x_i\|$$ \\ \\
 Si $y_i(w^{(t)T}x_i) \leq 0$, se aplica la regla $w^{(t+1)} = w^{(t)} + y_i x_i$. Esto garantiza un ajuste direccional correcto:
 $$y_i(w^{(t+1)T}x_i) = y_i(w^{(t)T}x_i) + y_i^2\|x_i\|^2 > y_i(w^{(t)T}x_i)$$ \\ \\
@@ -407,25 +407,25 @@ Partiendo de $w^{(0)} = 0$, se establecen dos cotas tras $t$ pasos:
 \end{enumerate}
 Por desigualdad de Cauchy-Schwarz:
 $$t\gamma \leq w^{*T}w^{(t)} \leq \|w^*\| \|w^{(t)}\| \leq 1 \cdot \sqrt{t}R$$
-$$t^2\gamma^2 \leq tR^2 \implies t \leq \left( \frac{R}{\gamma} \right)^2.$$ Esta resulta ser la precision (no deterministica) de convergencia del PLA. Ademas, verifica que termina en un numero finito de pasos. 
+$$t^2\gamma^2 \leq tR^2 \implies t \leq \left( \frac{R}{\gamma} \right)^2.$$ Esta resulta ser la precisión (no determinística) de convergencia del PLA. Además, verifica que termina en un número finito de pasos.
 \section{Tarea 11: Puntos de Juntura}
-\noindent Determine los putnos de juntura de la shallow network modelada por la aplicacion \[y = f(x, \phi) = \phi_0 + \phi_1 a[\theta_{10} + \theta_{11}x] + \phi_2 a[\theta_{20} + \theta_{21}x] + \phi_3 a[\theta_{30} + \theta_{31}x].\] \textit{Sugerencia}: Los pesos quedan representados en la juntura. Que pasa siigualamos a cero cada uno (o todos) de los factores lineales?\\ \\
-\textbf{Solucion:} La red definida por $f(x, \phi) = \phi_0 + \sum_{i=1}^3 \phi_i a[\theta_{i0} + \theta_{i1}x]$ opera como una función lineal continua por trozos (lo que se conoce como \textit{Continuous Piecewise Linear}). El conjunto de puntos de juntura $\mathcal{K} = \{x_i \in \mathbb{R} : x_i = -\theta_{i0}/\theta_{i1}\}$ define las singularidades de la primera derivada (cosa que ya mostraremos). En términos computacionales, cada $x_i$ marca una transición en el estado de activación de la unidad $i$, subdividiendo el dominio en regiones convexas donde el gradiente local $\frac{\partial f}{\partial x}$ permanece invariante. \\ \\
-La capacidad de aproximación está sujeta a la cardinalidad de $\mathcal{K}$. Si se impone la condición de colapso $x_1 = x_2 = x_3$, la red sufre una degeneración de rango en su espacio latente, reduciendo el número de segmentos lineales de $n+1$ a 2. A nivel teorico, este fenómeno implica que los vectores de parámetros $\theta_i$ son linealmente dependientes en el espacio de las fases de activación, lo que fuerza a la salida $f(x)$ a converger al sesgo global $\phi_0$ en el punto de coincidencia, eliminando la capacidad del modelo para representar funciones de alta varianza local. \\ \\
-La razon de por que finalmente esos terminan siendo los puntos de juntura, se fundamenta en la matriz Jacobiana $\mathbf{J} = \nabla_{\mathbf{\Theta}} f(x)$. Utilizando la función indicadora $\mathbb{I}(\cdot)$, las derivadas parciales se expresan como:
+\noindent Determine los puntos de juntura de la shallow network modelada por la aplicación \[y = f(x, \phi) = \phi_0 + \phi_1 a[\theta_{10} + \theta_{11}x] + \phi_2 a[\theta_{20} + \theta_{21}x] + \phi_3 a[\theta_{30} + \theta_{31}x].\] \textit{Sugerencia}: Los pesos quedan representados en la juntura. ¿Qué pasa si igualamos a cero cada uno (o todos) de los factores lineales?\\ \\
+\textbf{Solución:} La red definida por $f(x, \phi) = \phi_0 + \sum_{i=1}^3 \phi_i a[\theta_{i0} + \theta_{i1}x]$ opera como una función lineal continua por trozos (lo que se conoce como \textit{Continuous Piecewise Linear}). El conjunto de puntos de juntura $\mathcal{K} = \{x_i \in \mathbb{R} : x_i = -\theta_{i0}/\theta_{i1}\}$ define las singularidades de la primera derivada (cosa que ya mostraremos). En términos computacionales, cada $x_i$ marca una transición en el estado de activación de la unidad $i$, subdividiendo el dominio en regiones convexas donde el gradiente local $\frac{\partial f}{\partial x}$ permanece invariante. \\ \\
+La capacidad de aproximación está sujeta a la cardinalidad de $\mathcal{K}$. Si se impone la condición de colapso $x_1 = x_2 = x_3$, la red sufre una degeneración de rango en su espacio latente, reduciendo el número de segmentos lineales de $n+1$ a 2. A nivel teórico, este fenómeno implica que los vectores de parámetros $\theta_i$ son linealmente dependientes en el espacio de las fases de activación, lo que fuerza a la salida $f(x)$ a converger al sesgo global $\phi_0$ en el punto de coincidencia, eliminando la capacidad del modelo para representar funciones de alta varianza local. \\ \\
+La razón de por qué finalmente esos terminan siendo los puntos de juntura se fundamenta en la matriz Jacobiana $\mathbf{J} = \nabla_{\mathbf{\Theta}} f(x)$. Utilizando la función indicadora $\mathbb{I}(\cdot)$, las derivadas parciales se expresan como:
 $$\frac{\partial f}{\partial \phi_i} = a[\theta_{i0} + \theta_{i1}x], \quad \frac{\partial f}{\partial \theta_{i0}} = \phi_i \mathbb{I}(\theta_{i0} + \theta_{i1}x > 0), \quad \frac{\partial f}{\partial \theta_{i1}} = \phi_i x \mathbb{I}(\theta_{i0} + \theta_{i1}x > 0)$$
 Esta estructura implica que $\mathbf{J}$ es una función constante por tramos con discontinuidades en $\mathcal{K}$. La evaluación de $f(x, \phi)$ en los vértices permite la identificación algebraica de los pesos, dado que la nulidad del término $a[0]$ desacopla las contribuciones marginales de las neuronas en sus respectivos umbrales. \\ \\
 Debido a la naturaleza no suave de ReLU, el paisaje de pérdida presenta aristas donde el gradiente no está definido. Usamos el algoritmo de retropropagación en ese caso, que utiliza el subgradiente, enfrentando discontinuidades de salto en cada $x_i \in \mathcal{K}$. Computacionalmente, esto significa que el vector de actualización de pesos muta de forma abrupta al cruzar una juntura, una propiedad que permite a la red modelar cambios de régimen nítidos pero que requiere esquemas de regularización para evitar oscilaciones en el proceso de minimización del riesgo empírico. \\ \\
 Al sustituir la activación por funciones suaves $\sigma \in C^\infty$ (por ejemplo, Sigmoide), la red se transforma en una variedad diferenciable. Los puntos $x_i$ dejan de ser quiebres geométricos y pasan a ser puntos de inflexión donde la curvatura $\kappa = \frac{|f''|}{(1+f'^2)^{3/2}}$ alcanza sus valores críticos. En este paradigma, el Jacobiano es continuo en todo el dominio, lo que permite el uso de métodos de Newton o cuasi-Newton, aunque se pierde la propiedad de soporte compacto de la activación, extendiendo la influencia de cada parámetro $\theta_{ij}$ a través de todo el espacio de entrada.
-\section{Tarea 12: Ejercicios presentacion perceptrones}
-\noindent Realizar los ejercicios de la presentacion de Modelos de Aprendizaje. \\ \\
-\textbf{Solucion:} Hay dos ejercicios, \\ \\
-\emph{1.2. Supongamos que podemos usar un perceptron para detectar mensages spam. Asumamos tambien que cada mensaje es representado pro la frecuencia de ocurrencia de las palabras claves comunes en un correo spam, donde el output es +1 si el mensaje es spam. \begin{enumerate}
-    \item Que palabras clave crees podrian tener mas peso positivo en el perceptron?
-    \item Que palabras clave crees podrian tener peso negativo?
-    \item Que parametro en el perceptron afecta directamente cuantos mensajes en la frontera de clasificacion terminan siendo clasificados como spam?
+\section{Tarea 12: Ejercicios presentación perceptrones}
+\noindent Realizar los ejercicios de la presentación de Modelos de Aprendizaje. \\ \\
+\textbf{Solución:} Hay dos ejercicios, \\ \\
+\emph{1.2. Supongamos que podemos usar un perceptrón para detectar mensajes spam. Asumamos también que cada mensaje es representado por la frecuencia de ocurrencia de las palabras clave comunes en un correo spam, donde el output es +1 si el mensaje es spam. \begin{enumerate}
+    \item ¿Qué palabras clave crees podrían tener más peso positivo en el perceptrón?
+    \item ¿Qué palabras clave crees podrían tener peso negativo?
+    \item ¿Qué parámetro en el perceptrón afecta directamente cuántos mensajes en la frontera de clasificación terminan siendo clasificados como spam?
 \end{enumerate}}
-\textbf{Solucion:} \\ \\
+\textbf{Solución:} \\ \\
 \textit{1)} Sea un clasificador basado en un perceptrón definido por la función de decisión:
 \[
 f(\mathbf{x}) = \text{sgn}(\mathbf{w}^\top \mathbf{x} + b)
@@ -447,7 +447,7 @@ $b = -2,0$. Al calcular la suma ponderada
 \[\mathbf{w} \cdot \mathbf{x} + b = (1,5 \cdot 3) + (1,2 \cdot 2) + (0,8 \cdot 1) - 2,0 = 4,5 + 2,4 + 0,8 - 2,0 = 5,7 \quad ,\] el resultado positivo activa la función de decisión 
 $f(\mathbf{x}) = \text{sgn}(5,7) = +1$, validando que la acumulación de pesos positivos 
 $w_i$ ante la presencia de términos como “gratis” desplaza el vector de forma efectiva hacia la clasificación de spam. \\ \\
-\textit{2)} Consideremos el mismo modelo de clasificación binaria previa, donde la etiqueta $y = -1$ representa un mensaje legítimo. En este contexto, el vector de pesos $\mathbf{w}$ asigna valores $w_i < 0$ a las componentes $x_i$ orrespondientes a términos cuya probabilidad condicional es mayor en la clase legítima, es decir, 
+\textit{2)} Consideremos el mismo modelo de clasificación binaria previa, donde la etiqueta $y = -1$ representa un mensaje legítimo. En este contexto, el vector de pesos $\mathbf{w}$ asigna valores $w_i < 0$ a las componentes $x_i$ correspondientes a términos cuya probabilidad condicional es mayor en la clase legítima, es decir,
 \[P(x_i > 0 \mid y = -1) > P(x_i > 0 \mid y = +1).\] Esto quiere decir que, dado un mensaje representado por el vector de frecuencias $\mathbf{x}$, la presencia de palabras con $w_i < 0$ (como “saludo” o “consulta”) reduce la magnitud de la combinación lineal \[z = \mathbf{w}^\top \mathbf{x} + b,\] desplazando el valor hacia el semi-espacio negativo definido por el hiperplano de decisión. Por lo tanto, si 
 \[\sum_{i: w_i < 0} w_i x_i\] es suficientemente pequeña, se garantiza que 
 $f(\mathbf{x}) = \text{sgn}(z) = -1$, logrando una correcta inhibición de la clase spam. \\ \\
@@ -477,7 +477,7 @@ Esta regla posee la propiedad de ajustar el vector de pesos en la dirección que
     \item Muestre que $y(t) \mathbf{w}^\top(t+1) \mathbf{x}(t) > y(t) \mathbf{w}^\top(t) \mathbf{x}(t). \quad$ (\textit{Sugerencia:} Sustituya la regla de actualización de pesos en el término de la izquierda).
     \item En lo que respecta a la clasificación de $\mathbf{x}(t)$, argumente de manera formal si el paso de $\mathbf{w}(t)$ a $\mathbf{w}(t+1)$ constituye un movimiento en la ``dirección correcta''.
 \end{enumerate}}
-\textbf{Solucion:} \\ \\
+\textbf{Solución:} \\ \\
 \textit{1)} Si el vector $\mathbf{x}(t)$ es clasificado erróneamente por $\mathbf{w}(t)$, entonces el signo de la predicción $\text{sgn}(\mathbf{w}^\top(t)\mathbf{x}(t))$ es opuesto al signo de la etiqueta real $y(t)$:
 \begin{align*}
     \text{Si } y(t) = +1 &\implies \mathbf{w}^\top(t)\mathbf{x}(t) < 0 &\\ \\
@@ -502,7 +502,7 @@ Esto, pues $\alpha > 0$ y $\|\mathbf{x}(t)\|^2 > 0$ (asumiendo un vector no nulo
 Este resultado positivo implica que el valor de la función de decisión se desplaza algebraicamente hacia la región de clasificación correcta (hacia valores positivos si $y=1$, o hacia valores más negativos si $y=-1$, lo que en el producto por $y(t)$ siempre resulta en un incremento). Por lo tanto, $\mathbf{w}(t+1)$ reduce el error cometido por $\mathbf{w}(t)$.
 \section{Tarea 13: XOR vs Algoritmos de Aprendizaje}
 \noindent Modelar un XOR conectando varias neuronas básicas. Luego modelar un XOR con perceptrones (con pesos específicos para cada uno). \\ \\
-\textbf{Solucion:} Sea $H(z)$ la función de activación de Heaviside. El sistema se define mediante las siguientes etapas: \\ \\
+\textbf{Solución:} Sea $H(z)$ la función de activación de Heaviside. El sistema se define mediante las siguientes etapas: \\ \\
 La neurona $h_1$ representa la unión de los conjuntos de entrada: $z_1 = \mathbf{w}_1^\top \mathbf{x} + b_1$.
 \begin{center}
 \begin{tabular}{cccc}
@@ -541,7 +541,7 @@ $h_1$ & $h_2$ & $z_o = h_1 - 2h_2 - 0,5$ & $\hat{y} = H(z_o)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Asi, al componer las funciones $f: \mathbb{B}^2 \to \mathbb{B}$, concluimos la convergencia al operador XOR:
+Así, al componer las funciones $f: \mathbb{B}^2 \to \mathbb{B}$, concluimos la convergencia al operador XOR:
 \begin{center}
 \begin{tabular}{cccccc}
 \toprule
@@ -554,9 +554,9 @@ $x_1$ & $x_2$ & $h_1$ & $h_2$ & $\hat{y}$ & \textbf{XOR} \\
 \bottomrule
 \end{tabular}
 \end{center}
-El grafico del primer caso sin usar perceptrones seria \\ \\
+El gráfico del primer caso sin usar perceptrones sería \\ \\
 \textbf{Grafico} \\ \\
-y usando perceptrones con pesos especificos, quedaria \\ \\
+y usando perceptrones con pesos específicos, quedaría \\ \\
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -587,8 +587,8 @@ y usando perceptrones con pesos especificos, quedaria \\ \\
 \end{tikzpicture}
 \end{center}
 \section{Tarea 14: Sobre la desigualdad de Hoeffding}
-\noindent A partir de la desigualdad de hoffding determine, entre los parámetros $\epsilon$ y $\delta = 2Me^(-2N\epsilon^2)$, cuál controla de una mejor manera el $N$, con $N$ número de datos. \\ \\
-\textbf{Solucion:} 
+\noindent A partir de la desigualdad de Hoeffding, determine, entre los parámetros $\epsilon$ y $\delta = 2Me^(-2N\epsilon^2)$, cuál controla de una mejor manera el $N$, con $N$ número de datos. \\ \\
+\textbf{Solución:}
 La desigualdad de Hoeffding establece una cota superior para la probabilidad de desviación de la media empírica $\hat{\mu}_N$ respecto a la media poblacional $\mu$. Para variables i.i.d. en el intervalo $[0,1]$, se cumple:
 \[
 \mathbb{P}\left( |\hat{\mu}_N - \mu| > \epsilon \right) \leq 2 e^{-2N \epsilon^2}
@@ -602,10 +602,10 @@ De esta relación se desprenden dos comportamientos asintóticos fundamentales:
     \item \textbf{Escalamiento logarítmico en $\delta$:} Para un valor fijo de $\epsilon$, el número de muestras requerido crece de forma logarítmica respecto a la confianza deseada ($1/\delta$).
     \item \textbf{Escalamiento cuadrático en $\epsilon$:} Para un valor fijo de $\delta$, la precisión del estimador está sujeta a un costo cuadrático en $N$. Reducir la tolerancia $\epsilon$ a la mitad requiere cuadriplicar el tamaño de la muestra $N$.
 \end{itemize}
-Asi,el parámetro $\delta$ controla de manera más eficiente el crecimiento del número de datos  $N$. Ademas es posible reducir drásticamente la probabilidad de error  $\delta$ (aumentando la confianza) con un incremento marginal en $N$; por el contrario, la tolerancia $\epsilon$ ejerce un control dominante y más costoso sobre el sistema, ya que su influencia es cuadrática inversa ($1/\epsilon^2$), lo que implica que cualquier intento por mejorar la precisión de la estimación requiere un aumento significativamente mayor en el volumen de la muestra.
+Así, el parámetro $\delta$ controla de manera más eficiente el crecimiento del número de datos $N$. Además, es posible reducir drásticamente la probabilidad de error $\delta$ (aumentando la confianza) con un incremento marginal en $N$; por el contrario, la tolerancia $\epsilon$ ejerce un control dominante y más costoso sobre el sistema, ya que su influencia es cuadrática inversa ($1/\epsilon^2$), lo que implica que cualquier intento por mejorar la precisión de la estimación requiere un aumento significativamente mayor en el volumen de la muestra.
 \section{Tarea 15: Rectas separadoras y combinatoria}
-\noindent Cuál es el número efectivo de líneas (rectas) para separar 5 puntos (en 2 etiquetas?) $\mathbb{R}^2$? (Ver todas las rectas posibles que separan 2 clases compuestas por 5 puntos, discriminar los casos en los que una recta no puede separar y así encontrar el número de rectas efectivas.) \\ \\
-\textbf{Solucion:} Sea un conjunto de puntos $\mathcal{X} = \{\mathbf{x}_i\}_{i=1}^N \subset \mathbb{R}^d$ en posición arbitraria. Definimos el número de dicotomías linealmente separables mediante la función de capacidad de Cover:
+\noindent ¿Cuál es el número efectivo de líneas (rectas) para separar 5 puntos (¿en 2 etiquetas?) $\mathbb{R}^2$? (Ver todas las rectas posibles que separan 2 clases compuestas por 5 puntos, discriminar los casos en los que una recta no puede separar y así encontrar el número de rectas efectivas.) \\ \\
+\textbf{Solución:} Sea un conjunto de puntos $\mathcal{X} = \{\mathbf{x}_i\}_{i=1}^N \subset \mathbb{R}^d$ en posición arbitraria. Definimos el número de dicotomías linealmente separables mediante la función de capacidad de Cover:
 \[
 L(N, d) = 2 \sum_{k=0}^{d} \binom{N-1}{k}
 \]
@@ -624,14 +624,14 @@ La función de crecimiento $\Pi_{\mathcal{H}}(N)$ para la clase de hiperplanos $
     \item \textbf{Valor Exacto (Cover):} $L(5, 2) = 22$.
 \end{itemize}
 El hecho de que $22 < 26$ indica que la cota de Sauer es conservadora, mientras que el resultado de Cover proporciona el límite superior exacto para puntos en posición general. Las 10 dicotomías fallidas representan casos donde la geometría de los puntos impide la separación lineal, como sucede con los puntos interiores de una envolvente convexa o las diagonales de un polígono.
-\section{Tarea 16: Ejercicio presentacion Desigualdades}
+\section{Tarea 16: Ejercicio presentación Desigualdades}
 \noindent Para este ejercicio, redireccionar a \hyperlink{https://colab.research.google.com/drive/1i3EZi1huZKmpNmWHTo7MsgXopWqNLMIN?usp=sharing}{este cuaderno}.
-\section{Tarea 17: Analisis de Imagen}
-\noindent Cuantos dobleces se tiene en la siguiente figura? \\ 
+\section{Tarea 17: Análisis de Imagen}
+\noindent ¿Cuántos dobleces tiene la siguiente figura? \\
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/screenshot.png}
 \end{figure} \\
-\textbf{Solucion:} La figura ilustra la construcción de una función continua y lineal por partes mediante la agregación de tres unidades ocultas con activación ReLU:
+\textbf{Solución:} La figura ilustra la construcción de una función continua y lineal por partes mediante la agregación de tres unidades ocultas con activación ReLU:
 \[
 y = \phi_0 + \sum_{i=1}^{3} \phi_i \cdot \max(0, \mathbf{w}_i^\top \mathbf{x} + b_i)
 \]
