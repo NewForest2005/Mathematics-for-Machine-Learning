@@ -25,12 +25,9 @@ La carpeta [`Understanding-Deep-Learning/`](Understanding-Deep-Learning/) contie
 4. **Funciones de pérdida**: mínimos cuadrados, entropía cruzada binaria y clasificación multiclase.
 5. **Optimización**: búsqueda lineal, descenso de gradiente, descenso de gradiente estocástico y momentum.
 
-Consulta el [README de Understanding Deep Learning](Understanding-Deep-Learning/README.md) para acceder al índice detallado y a los enlaces de cada cuaderno.
+Consultar el [README de Understanding Deep Learning](Understanding-Deep-Learning/README.md) para acceder al índice detallado y a los enlaces de cada cuaderno.
 
 ## Uso
-
-Los cuadernos pueden abrirse y ejecutarse con Jupyter Notebook, JupyterLab o Google Colab. Para seguir el desarrollo conceptual de forma progresiva, se recomienda trabajar con los cuadernos de `Understanding-Deep-Learning` en orden numérico.
-
 Las instrucciones incluidas en cada cuaderno señalan las celdas que deben completarse, las preguntas de análisis y los experimentos propuestos.
 
 ## Organización
