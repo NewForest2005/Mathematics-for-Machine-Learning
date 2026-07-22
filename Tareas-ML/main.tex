@@ -74,7 +74,7 @@ Por otro lado, el coeficiente multinomial $W$ asociado a $S$ cuenta el número d
 \end{align*}
 Ahora, necesitamos el siguiente lema: \\ \\
 \textbf{\underline{Lema}:} Sea $a >1$. Entonces, existe una \textbf{única} función creciente $f:(0, \infty) \longrightarrow \mathbb{R}$ tal que \\ \\
-\hspace*{1cm} $(i) \ \ \ f(a) = 1,$ \\ 
+\hspace*{1cm} $(i) \ \ \ f(a) = 1,$ \\
 \hspace*{1cm} $(ii) \ \ f(xy) = f(x) + f(y), \quad \forall x,y >0.$ \\ \\
 \textbf{Demostración:} \\ \\
 Fijemos $x \in (0,1)$ arbitrario. Definimos $S_x = \left\{ \frac{k}{n} \in \mathbb{Q} \ | \ a^{\frac{k}{n}} \leq x \right\} \subseteq \mathbb{R}$. Este conjunto es no vacío, pues, por la \textbf{Desigualdad de Bernoulli}, para cualesquiera $h>0$ y $n \in \mathbb{N}$, se cumple \[(1+h)^n \geq 1 + nh.\] Sea $a=1+h$ para algún $h>0$ (este existe, una de las razones es que $a>1$), entonces  \[a^n \geq 1+nh > x\] (pues $x \in (0,1)$. De este modo, \[a^{-n} < x.\]
@@ -83,25 +83,25 @@ Definamos $f:(0,1) \longrightarrow \mathbb{R}$ dada por $f(x) = \sup S_x$. Nos d
 \hspace{2cm} $(i)$ Cuando $x=a$, se cumple que $a^1 = a$, por lo cual $1 \in S_a$ y si $0<k<1$, entonces $k \in S_a$; además, si $k>1$, entonces $k \not\in S_a$. De este modo, $f(a) = \sup S_a 1$. \\ \\
 \hspace{2cm} $(ii)$ $f(xy) = \sup S_{xy} = \sup \left\{ \frac{k}{n} \in \mathbb{Q} \ | \ a^{\frac{k}{n}} \leq xy \right\}$. Ahora bien, si $q \in S_x$ y $r \in S_y$, entonces $a^{q+r} = a^q a^r \leq xy$, lo que implica $q+r \in S_{xy}$, por lo tanto $S_x + S_y \subseteq S_{xy}$ y $\sup S_x + \sup S_y \leq \sup S_{xy}$. \\ \\ Inversamente, $\forall \epsilon > 0$, existen $q \in \mathbb{Q} \cap (f(x)-\epsilon, f(x)]$ y $r \in \mathbb{Q} \cap (f(y)-\epsilon, f(y)]$ tales que $a^{q+r} \leq xy$ es arbitrariamente cercano a $xy$. \\ \\
 Además, $f$ es creciente. En efecto, \\ \\
-Por la densidad de $\mathbb{Q}$ y la continuidad de $a^z$, resultando en $\sup S_{xy} \leq \sup S_x + \sup S_y$. 
+Por la densidad de $\mathbb{Q}$ y la continuidad de $a^z$, resultando en $\sup S_{xy} \leq \sup S_x + \sup S_y$.
 Así, $f(xy) = \sup S_{xy} = \sup(S_x + S_y) = \sup S_x + \sup S_y = f(x) + f(y)$. \\ \\
 Veamos ahora que, en efecto, esta función es única. Razonando por reducción al absurdo, supongamos que existe $x \in (0,1)$ tal que $f(x) \neq \sup S_x$. Necesitaremos mostrar por inducción que $f(x^n) = n f(x)$: \\ \\
 \textbf{\underline{n=2}:} $f(x^2) = f(x \cdot x) = f(x) + f(x)$. \\ \\
 \textbf{\underline{H.I}:} Supongamos que $f(x^{n-1}) = (n-1)f(x)$, para ciertos $n \in \mathbb{N}$. \\ \\
 \textbf{\underline{P.I}:} Al realizar los cálculos, tenemos que \[ f(x^n) = f(x^{n-1} \cdot x) = f(x^{n-1}) + f(x) = (n-1)f(x) + f(x) = nf(x). \] Así, por el principio de inducción matemática, concluimos que $f(x^n) = nf(x)$ para todo $n \in \mathbb{Z}$. \\ \\
 Veamos con ello la unicidad de $f$. Supongamos que existe $g: (0,1) \longrightarrow \mathbb{R}$ que cumple las mismas condiciones de hipótesis. Dado $x \in (0, 1)$ y $\frac{k}{n} \in \mathbb{Q}$ con $n \in \mathbb{Q}$. \\ \\
-Por el resultado anterior, $g(x^n) = ng(x)$, de donde $g(x^{-n}) = -ng(x)$ (pues $g(x) = g(y^n) = n g(y) = n g(x^{1/n})$ y por tanto,  $ g(x^{1/n}) = \frac{1}{n} g(x)$) y 
+Por el resultado anterior, $g(x^n) = ng(x)$, de donde $g(x^{-n}) = -ng(x)$ (pues $g(x) = g(y^n) = n g(y) = n g(x^{1/n})$ y por tanto,  $ g(x^{1/n}) = \frac{1}{n} g(x)$) y
 $g(x^{k/n}) = g(x) = \frac{k}{n} g(x)$ (pues $g(x^{k/n}) = g((x^{1/n})^k) = k g(x^{1/n}) = \frac{k}{n} g(x)$). \\ \\
-Si 
-$q = \frac{k}{n} \in S_x$, entonces 
-$a^q \leq x \text{ implica } g(a^q) \leq g(x) \text{ que a su vez implica } q \cdot g(a) \leq g(x), \text{ de modo que } q \leq g(x)$, por lo cual 
+Si
+$q = \frac{k}{n} \in S_x$, entonces
+$a^q \leq x \text{ implica } g(a^q) \leq g(x) \text{ que a su vez implica } q \cdot g(a) \leq g(x), \text{ de modo que } q \leq g(x)$, por lo cual
 $\sup S_x \leq g(x)$. \\ \\
-Recíprocamente, si 
-$q' \in \mathbb{Q}$ tal que 
-$q' > f(x)$, entonces 
-$a^{q'} > x \text{ por lo cual } g(a^{q'}) \geq g(x) \text{ y con esto, } q' \geq g(x)$, de donde 
+Recíprocamente, si
+$q' \in \mathbb{Q}$ tal que
+$q' > f(x)$, entonces
+$a^{q'} > x \text{ por lo cual } g(a^{q'}) \geq g(x) \text{ y con esto, } q' \geq g(x)$, de donde
 $g(x) = \sup \{ q \in \mathbb{Q} \mid q \leq g(x) \} = f(x)$. \\ \\
-Por lo tanto, 
+Por lo tanto,
 $f = g$ es la única función que satisface las hipótesis. De este modo, $f(x) = \sup S_x = \log_a(x)$. De ahora en adelante, trabajaremos con $a=2$. \\ \\
 Para representar la información, buscamos una función $I: S \longrightarrow C $ entre los dos conjuntos independientes de interés ($S$ fuente y $C$ destino), tales que $|S| = W_1$ y $|C| = W_2$. \\ \\ Por el \textbf{Axioma de Aditividad de Shannon-Khinchin}, sabemos que la información conjunta obtenida de dos sistemas independientes es la suma de la información de cada una. Así, $I(w_1 w_2) = I(w_1) + I(w_2)$. Esto nos dice que la función de información que buscamos es monótona creciente; en particular, como la concatenación y la adición son operaciones binarias, tenemos que  \[ I(w^k) = kI(w), \quad \forall k \in \mathbb{Z}^+.\]
 Ahora, tomemos dos bases distintas $a,b \in \mathbb{R}$. Por la propiedad arquimediana, para $m \gg 1$, podemos encontrar $n \in \mathbb{Z}^+$ tal que \[a^n \leq b^m < a^{n+1}.\]
@@ -135,7 +135,7 @@ Dada una sucesión $\{X_n\}$ de muestras independientes e idénticamente distrib
 De este modo, si $Y$ modela la información de un evento $y_i = p_i \log p_i$, tenemos que $P(x_1,...,x_N) = \Pi_{i=1}^N \ p_i$ (pues son eventos independientes). Así, \[ \frac{1}{N} \log P(x_1,...,x_N) = \frac{1}{N} \ \Sigma_{i=1}^n \log p_i\]. \\
 Por la Ley Débil de los Números Grandes, tenemos que \[ \lim_{N \rightarrow \infty} P \left( \left| \frac{1}{N} \Sigma_{i=1}^N y_i - E[y] \gg \varepsilon \right| \right) =0 \] y como $y_i = p_i \log p_i$, entonces
 \begin{align*}
-    H(X) &= \text{Inf.Prom.} &\\ 
+    H(X) &= \text{Inf.Prom.} &\\
     &= E[\log P(x_1,...,x_N)] &\\
     &= \frac{1}{N} \log W
 \end{align*}
@@ -151,12 +151,12 @@ por lo cual, cuando $N \to \infty$,
 \textbf{Demostración:} Por definición, $E[X] = \int_0^\infty x f(x) dx $; luego,
 \begin{align*}
     E[X] &= \int_0^\infty x f(x) dx &\\ \\
-    &= \int_0^a x f(x) dx + \int_a^\infty x f(x) dx &\\ \\ 
+    &= \int_0^a x f(x) dx + \int_a^\infty x f(x) dx &\\ \\
     & \geq \int_a^\infty a f(x) dx &\\ \\
     &= a \int_a^\infty f(x) dx &\\ \\
     &= a P(X \geq a).
 \end{align*}
-Ahora, si $X$ es discreta, tenemos que 
+Ahora, si $X$ es discreta, tenemos que
 \begin{align*}
     E[X] &= \Sigma_x \ x \ P(X = x) &\\ \\
     &= \Sigma_{x<a} \ x \ P(X = x) + \Sigma_{x \geq a} \ x \ P(X = x)  &\\ \\
@@ -169,7 +169,7 @@ Ahora, si $X$ es discreta, tenemos que
 \noindent Sea $X$ una variable aleatoria con $E[X] = \mu \in \mathbb{R}$ y $\mathrm{Var}(X) \in \mathbb{R}$. Entonces, para cualquier $a>0$, \[P(|X - \mu | \geq a) \leq \frac{\mathrm{Var}(X)}{a^2}.\]
 \textbf{Demostración:} Sea $X$ una variable aleatoria, entonces $(X - E[X])^2 \geq 0$ también es variable aleatoria (pues desplazamientos y elevar al cuadrado preservan aleatoriedad). Aplicando la desigualdad de Markov, tenemos que
 \begin{align*}
-    P(|X - E[X]| \geq a) 
+    P(|X - E[X]| \geq a)
     &= P\left[(X-E[X])^2 \geq a^2\right] &\\ \\
     & \leq \frac{E\left[(X-E[X])^2\right]}{a^2} &\\ \\
     & = \frac{\mathrm{Var}(X)}{a^2}.
@@ -243,7 +243,7 @@ El logro de un RMSE de $0.256$ frente a modelos triviales ($0.279$) valida matem
 \section{Tarea 5: K-Nearest-Neighbours}
 \noindent ¿Cuál es el conjunto de hipótesis del modelo de aprendizaje \textit{K-Nearest Neighbours}? ¿Cuál es su modelo de aprendizaje? \\ \\
 \textbf{Análisis:} \\ \\
-El conjunto de hipótesis $\mathcal{H}$ en un modelo $K$-NN está intrínsecamente ligado a la geometría del espacio métrico $(\mathbb{R}^d, d)$. Para $K=1$, la hipótesis induce una teselación de Voronoi donde el espacio se particiona en regiones $\mathcal{R}_i = \{x \in \mathbb{R}^d : d(x, x_i) \leq d(x, x_j) \forall j \neq i\}$, siendo $x_i$ un vector del conjunto de entrenamiento $\mathcal{D}$. Para un $K$ arbitrario, la función de decisión $\hat{f}(x)$ se define como la agregación local $\text{mode}\{y_i\}_{i \in N_K(x)}$ para clasificación o $\frac{1}{K} \sum_{i \in N_K(x)} y_i$ para regresión, donde $N_K(x)$ es el conjunto de los $K$ índices de los vectores más cercanos a $x$. Esta aproximación representa una función constante por pedazos cuya complejidad, medida a través de la dimensión VC, es inversamente proporcional a $K$, permitiendo una adaptación no paramétrica a la topología de la distribución subyacente de los datos. \\ \\ 
+El conjunto de hipótesis $\mathcal{H}$ en un modelo $K$-NN está intrínsecamente ligado a la geometría del espacio métrico $(\mathbb{R}^d, d)$. Para $K=1$, la hipótesis induce una teselación de Voronoi donde el espacio se particiona en regiones $\mathcal{R}_i = \{x \in \mathbb{R}^d : d(x, x_i) \leq d(x, x_j) \forall j \neq i\}$, siendo $x_i$ un vector del conjunto de entrenamiento $\mathcal{D}$. Para un $K$ arbitrario, la función de decisión $\hat{f}(x)$ se define como la agregación local $\text{mode}\{y_i\}_{i \in N_K(x)}$ para clasificación o $\frac{1}{K} \sum_{i \in N_K(x)} y_i$ para regresión, donde $N_K(x)$ es el conjunto de los $K$ índices de los vectores más cercanos a $x$. Esta aproximación representa una función constante por pedazos cuya complejidad, medida a través de la dimensión VC, es inversamente proporcional a $K$, permitiendo una adaptación no paramétrica a la topología de la distribución subyacente de los datos. \\ \\
 Desde la perspectiva de la teoría de la computación, el algoritmo KNN opera bajo un paradigma de \textit{lazy learning}, donde la fase de entrenamiento se reduce a una operación de complejidad temporal $\mathcal{O}(1)$ (almacenamiento en memoria de $\mathcal{D}$). La inducción no produce un modelo paramétrico explícito $\theta$, sino que delega el costo computacional a la fase de consulta (inferencia). Matemáticamente, la estimación de la función objetivo en un punto de consulta $x_q$ requiere evaluar un funcional de distancia $d(x_q, x_i)$ sobre la totalidad del conjunto de soporte, resultando en una complejidad de búsqueda de $\mathcal{O}(nd)$ en su forma ingenua. Al no existir una minimización de una función de pérdida global durante el entrenamiento, el modelo realiza una aproximación local de la esperanza condicional $E[Y|X=x]$, fundamentando su convergencia en el hecho de que, conforme $n \to \infty$ y $K/n \to 0$, el error del vecino más cercano se aproxima asintóticamente a no más del doble del error de Bayes.
 \section{Tarea 6: Aprendizaje Supervisado}
 \noindent En aprendizaje supervisado, ¿por qué partimos de la suposición de trabajar con un conjunto de entrenamiento de ejemplares independientes e idénticamente distribuidos (IID)?\\ \\
@@ -265,8 +265,8 @@ tasa de aprendizaje $\eta$,
 máximo de iteraciones $T_{\max}$
 
 \State \textbf{Iteration:}
-$w^{(0)}\gets\mathbf{0}$; \ 
-$\hat{w}_{\text{pocket}}\gets w^{(0)}$; \ 
+$w^{(0)}\gets\mathbf{0}$; \
+$\hat{w}_{\text{pocket}}\gets w^{(0)}$; \
 $E_{\min}\gets \operatorname{contar\_errores}(w^{(0)},\mathcal{D})$
 
 \For{$t=1$ \textbf{to} $T_{\max}$}
@@ -371,7 +371,7 @@ $b\in\mathbb{R}$
 \textbf{Análisis:}
 Sea $\mathcal{X}$ un dominio de entrada de cardinalidad finita y $\mathcal{Y} = \{0, 1\}$ el espacio de etiquetas. Consideramos el conjunto $\mathcal{F} = \mathcal{Y}^{\mathcal{X}}$ de todas las posibles funciones objetivo. Un algoritmo de aprendizaje $\mathcal{A}$ se define como una aplicación que mapea un conjunto de entrenamiento $\mathcal{S} = \{(x_i, y_i)\}_{i=1}^m$ a una hipótesis $h \in \mathcal{Y}^{\mathcal{X}}$. \\ \\
 El \textbf{Teorema del No Free Lunch} de Wolpert establece que, si el rendimiento de un algoritmo se mide por su error de generalización fuera de la muestra, el promedio de dicho error sobre todas las funciones $f \in \mathcal{F}$ es constante para cualquier $\mathcal{A}$. Formalmente:
- 
+
 \begin{equation}
 \mathbb{E}_{\mathcal{F}} [L(f, \mathcal{A}(\mathcal{S}))] = \frac{1}{|\mathcal{F}|} \sum_{f \in \mathcal{F}} \sum_{x \notin \mathcal{S}} \mathbb{P}(f(x) \neq \mathcal{A}(\mathcal{S})(x)) = \frac{1}{2}
 \end{equation}
@@ -382,7 +382,7 @@ R(h) \leq \hat{R}_m(h) + \sqrt{\frac{8 d \ln(2em/d) + 8 \ln(4/\delta)}{m}}
 \end{equation}
 \noindent donde $d = \text{VC}(\mathcal{H})$ y $1-\delta$ es el nivel de confianza. Si un algoritmo intentara operar sobre la totalidad de $\mathcal{F}$, se tendría $d \to \infty$, lo que anularía la convergencia de la cota de error. Por tanto, el aprendizaje es teóricamente factible si y solo si se restringe la complejidad del espacio de búsqueda. \\ \\
 Desde la perspectiva de la computación algorítmica, la selección de la hipótesis óptima se formula como un problema de \textbf{Minimización del Riesgo Estructural} (SRM). Dado que la minimización del error empírico puro es un problema NP-duro para clases de hipótesis generales, el algoritmo implementa un sesgo inductivo a través de un funcional de regularización $\Omega(h)$. El proceso de optimización se define como:
- 
+
 \begin{equation}
 h^* = \arg \min_{h \in \mathcal{H}} \left\{ \frac{1}{m} \sum_{i=1}^m \ell(h(x_i), y_i) + \lambda \|h\|_{\Omega} \right\}
 \end{equation}
@@ -390,7 +390,7 @@ h^* = \arg \min_{h \in \mathcal{H}} \left\{ \frac{1}{m} \sum_{i=1}^m \ell(h(x_i)
 Concluimos que la generalización es una transferencia de información desde el sesgo inductivo hacia la interpretación de la muestra. Por el \textbf{Lema Fundamental del Aprendizaje}, para cualquier algoritmo de aprendizaje $A$ y cualquier tamaño de muestra $m \leq d/2$, existe una distribución de probabilidad sobre $\mathcal{X} \times \mathcal{Y}$ tal que el error esperado de $A$ es al menos $1/4$, a pesar de que existe una hipótesis en $\mathcal{H}$ con error cero. \\ \\
 Esto demuestra que sin una estructura de regularidad estadística asumida a priori, la optimización deviene en una mera interpolación de ruido. La frontera epistemológica del aprendizaje reside en esta dualidad: no existe (por el momento) la piedra filosofal del aprendizaje, pues la capacidad de extraer leyes generales de la realidad física depende estrictamente del ingenio para acotar el espacio de posibilidades mediante hipótesis coherentes y estructuralmente finitas. En última instancia, el aprendizaje no es la ausencia de límites, sino la aplicación estratégica de los mismos, razón por la cual la existencia de un límite determinístico de estas capacidades es sinceramente absurdo.
 \section{Tarea 9: Perceptrones en distribuciones Gaussianas}
-\noindent Construir un modelo de distribuciones Gaussianas en el plano e implementar en el modelo el algoritmo de perceptrones. \\ \\ 
+\noindent Construir un modelo de distribuciones Gaussianas en el plano e implementar en el modelo el algoritmo de perceptrones. \\ \\
 \textbf{Solución:} Abrir el siguiente \href{https://colab.research.google.com/drive/1VsHPskZ8GEHAOjnnoC54lV5ICCNrOiIC?usp=sharing}{cuaderno de distribuciones Gaussianas} para consultar la solución.
 \section{Tarea 10: Perceptrones V.2}
 \noindent Respecto al Algoritmo de Aprendizaje de Perceptrones (previamente introducido en la Tarea 7), ¿el algoritmo encuentra los parámetros correctos (bajo qué precisión)? ¿El algoritmo para en un número finito de pasos? ¿Por qué funciona este algoritmo? Verificar que converge. \\ \\
@@ -441,16 +441,16 @@ Las palabras con mayor relevancia para la detección de \textit{spam} son aquell
 \[
 w_i \gg 0 \iff P(x_i > 0 \mid \text{spam}) \gg P(x_i > 0 \mid \text{legítimo})
 \]
-Consecuentemente, términos con alta frecuencia en mensajes de \textit{spam} aumentan la combinación lineal $\mathbf{w} \cdot \mathbf{x}$, favoreciendo la activación de la salida positiva del perceptrón. Consideremos un mensaje de spam con el vector de características 
-\[\mathbf{x} = [x_{\text{gratis}}, x_{\text{oferta}}, x_{\text{reembolso}}]^\top = [3, 2, 1]^\top,\] donde las altas frecuencias de estas palabras clave interactúan con un vector de pesos entrenado 
-$\mathbf{w} = [1,5, 1,2, 0,8]^\top$ y un sesgo 
-$b = -2,0$. Al calcular la suma ponderada 
-\[\mathbf{w} \cdot \mathbf{x} + b = (1,5 \cdot 3) + (1,2 \cdot 2) + (0,8 \cdot 1) - 2,0 = 4,5 + 2,4 + 0,8 - 2,0 = 5,7 \quad ,\] el resultado positivo activa la función de decisión 
-$f(\mathbf{x}) = \text{sgn}(5,7) = +1$, validando que la acumulación de pesos positivos 
+Consecuentemente, términos con alta frecuencia en mensajes de \textit{spam} aumentan la combinación lineal $\mathbf{w} \cdot \mathbf{x}$, favoreciendo la activación de la salida positiva del perceptrón. Consideremos un mensaje de spam con el vector de características
+\[\mathbf{x} = [x_{\text{gratis}}, x_{\text{oferta}}, x_{\text{reembolso}}]^\top = [3, 2, 1]^\top,\] donde las altas frecuencias de estas palabras clave interactúan con un vector de pesos entrenado
+$\mathbf{w} = [1,5, 1,2, 0,8]^\top$ y un sesgo
+$b = -2,0$. Al calcular la suma ponderada
+\[\mathbf{w} \cdot \mathbf{x} + b = (1,5 \cdot 3) + (1,2 \cdot 2) + (0,8 \cdot 1) - 2,0 = 4,5 + 2,4 + 0,8 - 2,0 = 5,7 \quad ,\] el resultado positivo activa la función de decisión
+$f(\mathbf{x}) = \text{sgn}(5,7) = +1$, validando que la acumulación de pesos positivos
 $w_i$ ante la presencia de términos como “gratis” desplaza el vector de forma efectiva hacia la clasificación de spam. \\ \\
 \textit{2)} Consideremos el mismo modelo de clasificación binaria previa, donde la etiqueta $y = -1$ representa un mensaje legítimo. En este contexto, el vector de pesos $\mathbf{w}$ asigna valores $w_i < 0$ a las componentes $x_i$ correspondientes a términos cuya probabilidad condicional es mayor en la clase legítima, es decir,
-\[P(x_i > 0 \mid y = -1) > P(x_i > 0 \mid y = +1).\] Esto quiere decir que, dado un mensaje representado por el vector de frecuencias $\mathbf{x}$, la presencia de palabras con $w_i < 0$ (como “saludo” o “consulta”) reduce la magnitud de la combinación lineal \[z = \mathbf{w}^\top \mathbf{x} + b,\] desplazando el valor hacia el semi-espacio negativo definido por el hiperplano de decisión. Por lo tanto, si 
-\[\sum_{i: w_i < 0} w_i x_i\] es suficientemente pequeña, se garantiza que 
+\[P(x_i > 0 \mid y = -1) > P(x_i > 0 \mid y = +1).\] Esto quiere decir que, dado un mensaje representado por el vector de frecuencias $\mathbf{x}$, la presencia de palabras con $w_i < 0$ (como “saludo” o “consulta”) reduce la magnitud de la combinación lineal \[z = \mathbf{w}^\top \mathbf{x} + b,\] desplazando el valor hacia el semi-espacio negativo definido por el hiperplano de decisión. Por lo tanto, si
+\[\sum_{i: w_i < 0} w_i x_i\] es suficientemente pequeña, se garantiza que
 $f(\mathbf{x}) = \text{sgn}(z) = -1$, logrando una correcta inhibición de la clase spam. \\ \\
 Para simular este comportamiento, consideremos un mensaje legítimo representado por el vector de características \[\mathbf{x} = [x_{\text{reunión}}, x_{\text{amigo}}, x_{\text{información}}]^\top = [1, 2, 1]^\top,\] donde la presencia de estos términos interactúa con un vector de pesos negativos $\mathbf{w} = [-1,8, -1,2, -0,5]^\top$ y un sesgo $b = 2,5$; al realizar el producto escalar y sumar el sesgo obtenemos \[\mathbf{w} \cdot \mathbf{x} + b = (-1,8 \cdot 1) + (-1,2 \cdot 2) + (-0,5 \cdot 1) + 2,5 = -1,8 - 2,4 - 0,5 + 2,5 = -2,2,\] lo que resulta en una activación $f(\mathbf{x}) = \text{sgn}(-2,2) = -1$, validando que el peso negativo de palabras como ``reunión'' es capaz de neutralizar el sesgo y clasificar correctamente el mensaje como legítimo. \\ \\
 \textit{3)} El parámetro de sesgo $b \in \mathbb{R}$ determina la traslación del hiperplano de decisión definido por la ecuación:
@@ -482,7 +482,7 @@ Esta regla posee la propiedad de ajustar el vector de pesos en la dirección que
 \textit{1)} Si el vector $\mathbf{x}(t)$ es clasificado erróneamente por $\mathbf{w}(t)$, entonces el signo de la predicción $\text{sgn}(\mathbf{w}^\top(t)\mathbf{x}(t))$ es opuesto al signo de la etiqueta real $y(t)$:
 \begin{align*}
     \text{Si } y(t) = +1 &\implies \mathbf{w}^\top(t)\mathbf{x}(t) < 0 &\\ \\
-    \text{Si } y(t) = -1 &\implies \mathbf{w}^\top(t)\mathbf{x}(t) > 0 
+    \text{Si } y(t) = -1 &\implies \mathbf{w}^\top(t)\mathbf{x}(t) > 0
 \end{align*}
 En ambos casos, $y(t) \left( \mathbf{w}^\top(t)\mathbf{x}(t) \right) < 0$. \\ \\
 \textit{2)} Utilizando la regla de actualización $\mathbf{w}(t+1) = \mathbf{w}(t) + \alpha y(t) \mathbf{x}(t)$:
@@ -556,7 +556,9 @@ $x_1$ & $x_2$ & $h_1$ & $h_2$ & $\hat{y}$ & \textbf{XOR} \\
 \end{tabular}
 \end{center}
 El gráfico del primer caso sin usar perceptrones sería \\ \\
-\textbf{Grafico} \\ \\
+begin{figure}
+    \includegraphics[width=\linewidth]{figures/XOR.jpeg}
+\end{figure}
 y usando perceptrones con pesos específicos, quedaría \\ \\
 \begin{center}
 \begin{tikzpicture}

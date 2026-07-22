@@ -1,23 +1,23 @@
 # Matemáticas para Machine Learning
 
-Repositorio de materiales académicos y prácticos para el estudio de las matemáticas y los fundamentos del aprendizaje automático. Incluye las tareas del curso y una colección de cuadernos de Jupyter basados en *Understanding Deep Learning*, de Simon J. D. Prince.
+Repositorio personal del curso *Matematicas para el Aprendizaje de MAquinas 2026-01*. Incluye las tareas del curso y una colección de cuadernos de Jupyter solución de ejercicios del libro *Understanding Deep Learning*, de Simon J. D. Prince.
 
 ## Contenido del repositorio
 
-### Tareas del curso
+### Tareas
 
 La carpeta [`Tareas-ML/`](Tareas-ML/) contiene el material de las tareas del curso:
 
 - [`main.pdf`](Tareas-ML/main.pdf): versión compilada y visualizable de las tareas.
-- [`main.tex`](Tareas-ML/main.tex): código fuente en LaTeX.
+- [`main.tex`](Tareas-ML/main.tex): código fuente en LaTeX del pdf.
 - [`figures/`](Tareas-ML/figures/): figuras y material multimedia.
-- [`archive/`](Tareas-ML/archive/): archivo comprimido del proyecto.
+- [`archive/`](Tareas-ML/archive/): archivo comprimido de las tareas del curso.
 
 La documentación y los enlaces a los cuadernos disponibles se encuentran en el [README de Tareas-ML](Tareas-ML/README.md).
 
 ### Understanding Deep Learning
 
-La carpeta [`Understanding-Deep-Learning/`](Understanding-Deep-Learning/) contiene 16 cuadernos de Jupyter traducidos al español. Los contenidos abarcan:
+La carpeta [`Understanding-Deep-Learning/`](Understanding-Deep-Learning/) contiene 16 cuadernos de Jupyter abarcando hasta el capítulo 6.4 del libro de Pierce. Los contenidos abarcan:
 
 1. **Fundamentos matemáticos y aprendizaje supervisado**: ecuaciones lineales, vectores, matrices, regresión y funciones de pérdida.
 2. **Redes neuronales superficiales**: funciones de activación, regiones lineales y redes con entradas unidimensionales y bidimensionales.
@@ -25,13 +25,13 @@ La carpeta [`Understanding-Deep-Learning/`](Understanding-Deep-Learning/) contie
 4. **Funciones de pérdida**: mínimos cuadrados, entropía cruzada binaria y clasificación multiclase.
 5. **Optimización**: búsqueda lineal, descenso de gradiente, descenso de gradiente estocástico y momentum.
 
-Consulta el [README de Understanding Deep Learning](Understanding-Deep-Learning/README.md) para acceder al índice detallado y a los enlaces de cada cuaderno.
+Consultar el [README de Understanding Deep Learning](Understanding-Deep-Learning/README.md) para acceder al índice detallado y a los enlaces de cada cuaderno.
 
 ## Uso
 
-Los cuadernos pueden abrirse y ejecutarse con Jupyter Notebook, JupyterLab o Google Colab. Para seguir el desarrollo conceptual de forma progresiva, se recomienda trabajar con los cuadernos de `Understanding-Deep-Learning` en orden numérico.
+Los cuadernos pueden abrirse y ejecutarse con Jupyter Notebook, JupyterLab o Google Colab. Para seguir el desarrollo conceptual de forma progresiva, se recomienda trabajar con los cuadernos de `Understanding-Deep-Learning` en orden numérico. Se restringe el uso exclusivo a miembros de la comunidad universitaria de la *Universidad Nacional de Colombia*.
 
-Las instrucciones incluidas en cada cuaderno señalan las celdas que deben completarse, las preguntas de análisis y los experimentos propuestos.
+Las instrucciones incluidas en cada cuaderno señalan las celdas que deben completarse, las preguntas de análisis y los experimentos propuestos, seguidas de sus respectivas soluciones.
 
 ## Organización
 
@@ -49,6 +49,6 @@ Las instrucciones incluidas en cada cuaderno señalan las celdas que deben compl
 └── README.md
 ```
 
-## Referencia principal
+## Referencia 
 
 Simon J. D. Prince, *Understanding Deep Learning*.
