@@ -562,7 +562,7 @@ El gráfico del primer caso sin usar perceptrones sería \\ \\
 y usando perceptrones con pesos específicos, quedaría \\ \\
 \begin{center}
 \begin{tikzpicture}
-\begin{axis}[
+\begin{axis} [
     width=8cm, height=8cm,
     xlabel={$x$}, ylabel={$y$},
     xmin=-0.3, xmax=1.3, ymin=-0.3, ymax=1.3,
@@ -571,9 +571,13 @@ y usando perceptrones con pesos específicos, quedaría \\ \\
     legend pos=outer north east,
     legend style={font=\footnotesize}
 ]
+
 \addplot[fill=orange!20, draw=none] coordinates {
-     (0.7,0.2) (0.2,0.7)
-} \closedcycle;
+     (0,0.9)
+     (0,0.5)
+     (0.5,0)
+     (0.9,0)
+};
 
 \addplot[blue, thick, domain=-0.005:0.9, samples=2] {0.9 - x};
 \addlegendentry{Frontera de $h_1$(OR)}
