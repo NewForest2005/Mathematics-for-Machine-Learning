@@ -372,18 +372,18 @@ $b\in\mathbb{R}$
 Sea $\mathcal{X}$ un dominio de entrada de cardinalidad finita y $\mathcal{Y} = \{0, 1\}$ el espacio de etiquetas. Consideramos el conjunto $\mathcal{F} = \mathcal{Y}^{\mathcal{X}}$ de todas las posibles funciones objetivo. Un algoritmo de aprendizaje $\mathcal{A}$ se define como una aplicación que mapea un conjunto de entrenamiento $\mathcal{S} = \{(x_i, y_i)\}_{i=1}^m$ a una hipótesis $h \in \mathcal{Y}^{\mathcal{X}}$. \\ \\
 El \textbf{Teorema del No Free Lunch} de Wolpert establece que, si el rendimiento de un algoritmo se mide por su error de generalización fuera de la muestra, el promedio de dicho error sobre todas las funciones $f \in \mathcal{F}$ es constante para cualquier $\mathcal{A}$. Formalmente:
 
-\begin{equation}
+\begin{equation}[H]
 \mathbb{E}_{\mathcal{F}} [L(f, \mathcal{A}(\mathcal{S}))] = \frac{1}{|\mathcal{F}|} \sum_{f \in \mathcal{F}} \sum_{x \notin \mathcal{S}} \mathbb{P}(f(x) \neq \mathcal{A}(\mathcal{S})(x)) = \frac{1}{2}
 \end{equation}
 Este resultado implica algo trascendental: por cada función para la cual un algoritmo $\mathcal{A}$ generaliza con éxito, existe una función dual donde el mismo algoritmo falla. En consecuencia, la superioridad de un modelo no es una propiedad intrínseca de su arquitectura, sino una manifestación de su alineación con la distribución subyacente. \\ \\
 Establecida la imposibilidad de un aprendiz universal, la teoría del aprendizaje estadístico busca caracterizar las condiciones bajo las cuales un espacio de hipótesis $\mathcal{H}$ es ``PAC-aprendible'' (Probably Approximately Correct). Invocamos la \textbf{Dimensión de Vapnik-Chervonenkis}, denotada como $\text{VC}(\mathcal{H})$, que define la capacidad combinatoria de $\mathcal{H}$ para fragmentar (shatter) subconjuntos de $\mathcal{X}$. De acuerdo con el \textbf{Teorema Fundamental del Aprendizaje Estadístico}, una condición necesaria y suficiente para la convergencia uniforme del error es que $\text{VC}(\mathcal{H}) < \infty$. Para una muestra de tamaño $m$, el riesgo real $R(h)$ se encuentra acotado superiormente por el riesgo empírico $\hat{R}_m(h)$ mediante la desigualdad:
-\begin{equation}
+\begin{equation}[H]
 R(h) \leq \hat{R}_m(h) + \sqrt{\frac{8 d \ln(2em/d) + 8 \ln(4/\delta)}{m}}
 \end{equation}
 \noindent donde $d = \text{VC}(\mathcal{H})$ y $1-\delta$ es el nivel de confianza. Si un algoritmo intentara operar sobre la totalidad de $\mathcal{F}$, se tendría $d \to \infty$, lo que anularía la convergencia de la cota de error. Por tanto, el aprendizaje es teóricamente factible si y solo si se restringe la complejidad del espacio de búsqueda. \\ \\
 Desde la perspectiva de la computación algorítmica, la selección de la hipótesis óptima se formula como un problema de \textbf{Minimización del Riesgo Estructural} (SRM). Dado que la minimización del error empírico puro es un problema NP-duro para clases de hipótesis generales, el algoritmo implementa un sesgo inductivo a través de un funcional de regularización $\Omega(h)$. El proceso de optimización se define como:
 
-\begin{equation}
+\begin{equation}[H]
 h^* = \arg \min_{h \in \mathcal{H}} \left\{ \frac{1}{m} \sum_{i=1}^m \ell(h(x_i), y_i) + \lambda \|h\|_{\Omega} \right\}
 \end{equation}
 \noindent donde $\ell$ es la función de pérdida y $\lambda$ es el parámetro de penalización. Este esquema revela que el algoritmo no ``descubre'' conocimiento de forma pura, sino que proyecta las restricciones impuestas por $\Omega(h)$ —tales como la suavidad, la parsimonia (Norma $L_1$) o la invarianza topológica— sobre los datos. La eficiencia computacional se adquiere, por tanto, mediante la renuncia a la universalidad, transformando el aprendizaje en un ejercicio de optimización restringida. \\ \\
@@ -556,7 +556,7 @@ $x_1$ & $x_2$ & $h_1$ & $h_2$ & $\hat{y}$ & \textbf{XOR} \\
 \end{tabular}
 \end{center}
 El gráfico del primer caso sin usar perceptrones sería \\ \\
-\begin{figure}
+\begin{figure}[H]
     \includegraphics[width=\linewidth]{figures/XOR.jpeg}
 \end{figure}
 y usando perceptrones con pesos específicos, quedaría \\ \\
