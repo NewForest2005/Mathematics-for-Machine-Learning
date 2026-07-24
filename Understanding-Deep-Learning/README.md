@@ -1,7 +1,6 @@
 # Understanding Deep Learning
 
-Esta carpeta contiene cuadernos de Jupyter basados en el libro *Understanding Deep Learning*, de Simon J. D. Prince. Los cuadernos están traducidos al español y combinan explicaciones, visualizaciones, preguntas y ejercicios prácticos en Python.
-
+Esta carpeta contiene cuadernos tarea del libro *Understanding Deep Learning*, de Simon J. D. Prince, en español.
 ## Contenido
 
 ### 1. Fundamentos
