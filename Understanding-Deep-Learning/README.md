@@ -45,8 +45,3 @@ Esta carpeta contiene cuadernos de Jupyter basados en el libro *Understanding De
 | [6.3 Descenso de gradiente estocástico](6_3_Gradiente_en_Descenso_Estocastico.ipynb) | Comparación entre descenso de gradiente y descenso de gradiente estocástico. |
 | [6.4 Momentum](6_4_Momentum.ipynb) | Descenso de gradiente estocástico, momentum y momentum de Nesterov. |
 
-## Cómo utilizar los cuadernos
-
-Abre cada cuaderno en Jupyter o Google Colab y ejecuta las celdas en orden. Las instrucciones marcadas como **TAREA**, **TAREA PENDIENTE** o **TO DO** indican los lugares donde debes completar código, hacer predicciones o responder preguntas.
-
-Se recomienda seguir el orden numérico, ya que los conceptos de los primeros cuadernos sirven de base para comprender los siguientes.
