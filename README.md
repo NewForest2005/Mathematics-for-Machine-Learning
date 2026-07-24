@@ -1,6 +1,6 @@
 # Matemáticas para Machine Learning
 
-Repositorio personal del curso *Matematicas para el Aprendizaje de MAquinas 2026-01*. Incluye las tareas del curso y una colección de cuadernos de Jupyter solución de ejercicios del libro *Understanding Deep Learning*, de Simon J. D. Prince.
+Repositorio personal del curso *Matematicas para el Aprendizaje de Maquinas 2026-01*. Incluye las tareas del curso y una colección de cuadernos de Jupyter solución de ejercicios del libro *Understanding Deep Learning*, de Simon J. D. Prince.
 
 ## Contenido del repositorio
 
